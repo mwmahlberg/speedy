@@ -135,4 +135,13 @@
 			</build>
 		</profile>
 	</profiles>
+	<scm>
+		<url>https://github.com/mwmahlberg/speedy</url>
+		<connection>scm:git:https://github.com/mwmahlberg/speedy.git</connection>
+		<developerConnection>scm:git:git@github.com:mwmahlberg/speedy.git</developerConnection>
+	</scm>
+	<url>https://github.com/mwmahlberg/speedy</url>
+	<issueManagement>
+		<url>https://github.com/mwmahlberg/speedy/issues</url>
+	</issueManagement>
 </project>
