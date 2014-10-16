@@ -8,7 +8,7 @@
 
 	<head>
 		<meta charset="UTF-8" />
-		<title>speedy-template-thymeleaf &#x2013; Project Dependencies</title>
+		<title>Speedy Core &#x2013; Project Dependencies</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
 		<meta http-equiv="content-language" content="en" />
@@ -34,7 +34,7 @@
 
 	</head>
 
-	<body class="page-dependencies project-speedy-template-thymeleaf" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
+	<body class="page-dependencies project-speedy-core" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
 
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
@@ -93,25 +93,53 @@
    </thead> 
    <tbody> 
     <tr class="b"> 
-     <td>com.github.mwmahlberg.speedy</td> 
-     <td><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-api">speedy-api</a></td> 
-     <td>0.1.1-SNAPSHOT</td> 
+     <td>com.fasterxml.jackson.jaxrs</td> 
+     <td><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome/jackson-jaxrs-json-provider">jackson-jaxrs-json-provider</a></td> 
+     <td>2.2.3</td> 
      <td>jar</td> 
-     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a>-<a class="externalLink" href="http://www.gnu.org/licenses/lgpl-2.1.html">GNU Lesser General Public License, Version 2.1</a></td> 
     </tr> 
     <tr class="a"> 
-     <td>com.google.inject</td> 
-     <td><a class="externalLink" href="https://github.com/google/guice/guice">guice</a></td> 
-     <td>4.0-beta5</td> 
+     <td>com.fasterxml.jackson.module</td> 
+     <td><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">jackson-module-guice</a></td> 
+     <td>2.4.3</td> 
      <td>jar</td> 
      <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
     </tr> 
     <tr class="b"> 
-     <td>javax.servlet</td> 
-     <td><a class="externalLink" href="http://servlet-spec.java.net">javax.servlet-api</a></td> 
-     <td>3.1.0</td> 
+     <td>com.fasterxml.jackson.module</td> 
+     <td><a class="externalLink" href="http://wiki.fasterxml.com/JacksonJAXBAnnotations">jackson-module-jaxb-annotations</a></td> 
+     <td>2.2.3</td> 
      <td>jar</td> 
-     <td><a class="externalLink" href="https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html">CDDL + GPLv2 with classpath exception</a></td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a>-<a class="externalLink" href="http://www.gnu.org/licenses/lgpl-2.1.html">GNU Lesser General Public License, Version 2.1</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>com.github.mwmahlberg.speedy</td> 
+     <td><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-template-thymeleaf">speedy-template-thymeleaf</a></td> 
+     <td>0.1.1-SNAPSHOT</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>com.google.inject.extensions</td> 
+     <td><a class="externalLink" href="https://github.com/google/guice/extensions-parent/guice-servlet">guice-servlet</a></td> 
+     <td>4.0-beta5</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>com.sun.jersey.contribs</td> 
+     <td><a class="externalLink" href="https://jersey.java.net/jersey-contribs/jersey-guice/">jersey-guice</a></td> 
+     <td>1.18.1</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a>-<a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>commons-cli</td> 
+     <td><a class="externalLink" href="http://commons.apache.org/cli/">commons-cli</a></td> 
+     <td>1.2</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
     </tr> 
     <tr class="a"> 
      <td>nz.net.ultraq.thymeleaf</td> 
@@ -121,6 +149,41 @@
      <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
     </tr> 
     <tr class="b"> 
+     <td>org.eclipse.jetty</td> 
+     <td><a class="externalLink" href="http://www.eclipse.org/jetty">jetty-servlet</a></td> 
+     <td>9.3.0.M0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a>-<a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>org.reflections</td> 
+     <td><a class="externalLink" href="http://github.com/ronmamo/reflections">reflections</a></td> 
+     <td>0.9.9</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.wtfpl.net/">WTFPL</a>-<a class="externalLink" href="http://www.opensource.org/licenses/bsd-license.html">The New BSD License</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>org.slf4j</td> 
+     <td><a class="externalLink" href="http://www.slf4j.org">jul-to-slf4j</a></td> 
+     <td>1.7.7</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>org.slf4j</td> 
+     <td><a class="externalLink" href="http://www.slf4j.org">slf4j-api</a></td> 
+     <td>1.7.7</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>org.slf4j</td> 
+     <td><a class="externalLink" href="http://www.slf4j.org">slf4j-simple</a></td> 
+     <td>1.7.7</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td> 
+    </tr> 
+    <tr class="a"> 
      <td>org.thymeleaf</td> 
      <td><a class="externalLink" href="http://www.thymeleaf.org">thymeleaf</a></td> 
      <td>2.1.3.RELEASE</td> 
@@ -158,11 +221,81 @@
      <td>Public Domain</td> 
     </tr> 
     <tr class="a"> 
-     <td>com.google.guava</td> 
-     <td><a class="externalLink" href="http://code.google.com/p/guava-libraries/guava">guava</a></td> 
-     <td>16.0.1</td> 
+     <td>com.fasterxml.jackson.core</td> 
+     <td><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">jackson-annotations</a></td> 
+     <td>2.4.0</td> 
      <td>jar</td> 
      <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>com.fasterxml.jackson.core</td> 
+     <td><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">jackson-core</a></td> 
+     <td>2.4.3</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>com.fasterxml.jackson.core</td> 
+     <td><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">jackson-databind</a></td> 
+     <td>2.4.3</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>com.fasterxml.jackson.jaxrs</td> 
+     <td><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome/jackson-jaxrs-base">jackson-jaxrs-base</a></td> 
+     <td>2.2.3</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a>-<a class="externalLink" href="http://www.gnu.org/licenses/lgpl-2.1.html">GNU Lesser General Public License, Version 2.1</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>com.github.mwmahlberg.speedy</td> 
+     <td><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-api">speedy-api</a></td> 
+     <td>0.1.1-SNAPSHOT</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>com.google.code.findbugs</td> 
+     <td><a class="externalLink" href="http://findbugs.sourceforge.net/">annotations</a></td> 
+     <td>2.0.1</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser Public License</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>com.google.guava</td> 
+     <td><a class="externalLink" href="http://code.google.com/p/guava-libraries/guava">guava</a></td> 
+     <td>15.0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>com.google.inject</td> 
+     <td><a class="externalLink" href="https://github.com/google/guice/guice">guice</a></td> 
+     <td>4.0-beta5</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>com.sun.jersey</td> 
+     <td><a class="externalLink" href="https://jersey.java.net/jersey-core/">jersey-core</a></td> 
+     <td>1.18.1</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a>-<a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>com.sun.jersey</td> 
+     <td><a class="externalLink" href="https://jersey.java.net/jersey-server/">jersey-server</a></td> 
+     <td>1.18.1</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a>-<a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>com.sun.jersey</td> 
+     <td><a class="externalLink" href="https://jersey.java.net/jersey-servlet/">jersey-servlet</a></td> 
+     <td>1.18.1</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a>-<a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></td> 
     </tr> 
     <tr class="b"> 
      <td>javax.inject</td> 
@@ -172,11 +305,53 @@
      <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
     </tr> 
     <tr class="a"> 
+     <td>javax.servlet</td> 
+     <td><a class="externalLink" href="http://servlet-spec.java.net">javax.servlet-api</a></td> 
+     <td>3.1.0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html">CDDL + GPLv2 with classpath exception</a></td> 
+    </tr> 
+    <tr class="b"> 
      <td>ognl</td> 
      <td><a class="externalLink" href="http://ognl.org">ognl</a></td> 
      <td>3.0.6</td> 
      <td>jar</td> 
      <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>org.eclipse.jetty</td> 
+     <td><a class="externalLink" href="http://www.eclipse.org/jetty">jetty-http</a></td> 
+     <td>9.3.0.M0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a>-<a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>org.eclipse.jetty</td> 
+     <td><a class="externalLink" href="http://www.eclipse.org/jetty">jetty-io</a></td> 
+     <td>9.3.0.M0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a>-<a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>org.eclipse.jetty</td> 
+     <td><a class="externalLink" href="http://www.eclipse.org/jetty">jetty-security</a></td> 
+     <td>9.3.0.M0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a>-<a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></td> 
+    </tr> 
+    <tr class="b"> 
+     <td>org.eclipse.jetty</td> 
+     <td><a class="externalLink" href="http://www.eclipse.org/jetty">jetty-server</a></td> 
+     <td>9.3.0.M0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a>-<a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></td> 
+    </tr> 
+    <tr class="a"> 
+     <td>org.eclipse.jetty</td> 
+     <td><a class="externalLink" href="http://www.eclipse.org/jetty">jetty-util</a></td> 
+     <td>9.3.0.M0</td> 
+     <td>jar</td> 
+     <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a>-<a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></td> 
     </tr> 
     <tr class="b"> 
      <td>org.javassist</td> 
@@ -186,13 +361,6 @@
      <td><a class="externalLink" href="http://www.mozilla.org/MPL/MPL-1.1.html">MPL 1.1</a>-<a class="externalLink" href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL 2.1</a>-<a class="externalLink" href="http://www.apache.org/licenses/">Apache License 2.0</a></td> 
     </tr> 
     <tr class="a"> 
-     <td>org.slf4j</td> 
-     <td><a class="externalLink" href="http://www.slf4j.org">slf4j-api</a></td> 
-     <td>1.6.1</td> 
-     <td>jar</td> 
-     <td><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></td> 
-    </tr> 
-    <tr class="b"> 
      <td>org.unbescape</td> 
      <td><a class="externalLink" href="http://www.unbescape.org">unbescape</a></td> 
      <td>1.0</td> 
@@ -227,24 +395,154 @@
  <div class="section"> 
   <h3 id="Dependency_Tree">Dependency Tree</h3> 
   <ul> 
-   <li>com.github.mwmahlberg.speedy:speedy-template-thymeleaf:jar:0.1.1-SNAPSHOT <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep0"><i class="icon-info-sign"></i></button> 
+   <li>com.github.mwmahlberg.speedy:speedy-core:jar:0.1.1-SNAPSHOT <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep0"><i class="icon-info-sign"></i></button> 
     <div id="_dep0" style="" class=" collapse"> 
      <table border="0" class="bodyTable table table-striped table-hover"> 
       <thead> 
        <tr class="a"> 
-        <th>speedy-template-thymeleaf</th> 
+        <th>Speedy Core</th> 
        </tr> 
       </thead> 
       <tbody> 
        <tr class="b"> 
-        <td> <p><b>Description: </b>Thymleaf integration into the Speedy Web Application Framework</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-template-thymeleaf">https://github.com/mwmahlberg/speedy/speedy-template-thymeleaf</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+        <td> <p><b>Description: </b>The Core of the Speedy Web Application Framework.</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-core">https://github.com/mwmahlberg/speedy/speedy-core</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
        </tr> 
       </tbody> 
      </table> 
     </div> 
     <ul> 
-     <li>org.thymeleaf:thymeleaf:jar:2.1.3.RELEASE (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep2"><i class="icon-info-sign"></i></button> 
+     <li>com.google.inject.extensions:guice-servlet:jar:4.0-beta5 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep2"><i class="icon-info-sign"></i></button> 
       <div id="_dep2" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>Google Guice - Extensions - Servlet</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>Guice is a lightweight dependency injection framework for Java 6 and above</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/google/guice/extensions-parent/guice-servlet">https://github.com/google/guice/extensions-parent/guice-servlet</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <ul> 
+       <li>com.google.inject:guice:jar:4.0-beta5 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep4"><i class="icon-info-sign"></i></button> 
+        <div id="_dep4" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>Google Guice - Core Library</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Guice is a lightweight dependency injection framework for Java 6 and above</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/google/guice/guice">https://github.com/google/guice/guice</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <ul> 
+         <li>aopalliance:aopalliance:jar:1.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep6"><i class="icon-info-sign"></i></button> 
+          <div id="_dep6" style="" class=" collapse"> 
+           <table border="0" class="bodyTable table table-striped table-hover"> 
+            <thead> 
+             <tr class="a"> 
+              <th>AOP alliance</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr class="b"> 
+              <td> <p><b>Description: </b>AOP Alliance</p> <p><b>URL: </b><a class="externalLink" href="http://aopalliance.sourceforge.net">http://aopalliance.sourceforge.net</a></p> <p><b>Project License: </b>Public Domain</p></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div></li> 
+        </ul></li> 
+      </ul></li> 
+     <li>com.sun.jersey.contribs:jersey-guice:jar:1.18.1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep8"><i class="icon-info-sign"></i></button> 
+      <div id="_dep8" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>jersey-guice</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>Projects that provide additional functionality to jersey, like integration with other projects/frameworks.</p> <p><b>URL: </b><a class="externalLink" href="https://jersey.java.net/jersey-contribs/jersey-guice/">https://jersey.java.net/jersey-contribs/jersey-guice/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <ul> 
+       <li>javax.inject:javax.inject:jar:1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep10"><i class="icon-info-sign"></i></button> 
+        <div id="_dep10" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>javax.inject</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>The javax.inject API</p> <p><b>URL: </b><a class="externalLink" href="http://code.google.com/p/atinject/">http://code.google.com/p/atinject/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div></li> 
+       <li>com.sun.jersey:jersey-servlet:jar:1.18.1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep12"><i class="icon-info-sign"></i></button> 
+        <div id="_dep12" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>jersey-servlet</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Jersey is the open source (under dual CDDL+GPL license) JAX-RS (JSR 311) production quality Reference Implementation for building RESTful Web services.</p> <p><b>URL: </b><a class="externalLink" href="https://jersey.java.net/jersey-servlet/">https://jersey.java.net/jersey-servlet/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <ul> 
+         <li>com.sun.jersey:jersey-server:jar:1.18.1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep14"><i class="icon-info-sign"></i></button> 
+          <div id="_dep14" style="" class=" collapse"> 
+           <table border="0" class="bodyTable table table-striped table-hover"> 
+            <thead> 
+             <tr class="a"> 
+              <th>jersey-server</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr class="b"> 
+              <td> <p><b>Description: </b>Jersey is the open source (under dual CDDL+GPL license) JAX-RS (JSR 311) production quality Reference Implementation for building RESTful Web services.</p> <p><b>URL: </b><a class="externalLink" href="https://jersey.java.net/jersey-server/">https://jersey.java.net/jersey-server/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></p></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div> 
+          <ul> 
+           <li>com.sun.jersey:jersey-core:jar:1.18.1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep16"><i class="icon-info-sign"></i></button> 
+            <div id="_dep16" style="" class=" collapse"> 
+             <table border="0" class="bodyTable table table-striped table-hover"> 
+              <thead> 
+               <tr class="a"> 
+                <th>jersey-core</th> 
+               </tr> 
+              </thead> 
+              <tbody> 
+               <tr class="b"> 
+                <td> <p><b>Description: </b>Jersey is the open source (under dual CDDL+GPL license) JAX-RS (JSR 311) production quality Reference Implementation for building RESTful Web services.</p> <p><b>URL: </b><a class="externalLink" href="https://jersey.java.net/jersey-core/">https://jersey.java.net/jersey-core/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">CDDL 1.1</a><a class="externalLink" href="http://glassfish.java.net/public/CDDL+GPL_1_1.html">GPL2 w/ CPE</a></p></td> 
+               </tr> 
+              </tbody> 
+             </table> 
+            </div></li> 
+          </ul></li> 
+        </ul></li> 
+      </ul></li> 
+     <li>org.thymeleaf:thymeleaf:jar:2.1.3.RELEASE (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep18"><i class="icon-info-sign"></i></button> 
+      <div id="_dep18" style="" class=" collapse"> 
        <table border="0" class="bodyTable table table-striped table-hover"> 
         <thead> 
          <tr class="a"> 
@@ -259,8 +557,8 @@
        </table> 
       </div> 
       <ul> 
-       <li>ognl:ognl:jar:3.0.6 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep4"><i class="icon-info-sign"></i></button> 
-        <div id="_dep4" style="" class=" collapse"> 
+       <li>ognl:ognl:jar:3.0.6 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep20"><i class="icon-info-sign"></i></button> 
+        <div id="_dep20" style="" class=" collapse"> 
          <table border="0" class="bodyTable table table-striped table-hover"> 
           <thead> 
            <tr class="a"> 
@@ -274,8 +572,8 @@
           </tbody> 
          </table> 
         </div></li> 
-       <li>org.javassist:javassist:jar:3.16.1-GA (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep6"><i class="icon-info-sign"></i></button> 
-        <div id="_dep6" style="" class=" collapse"> 
+       <li>org.javassist:javassist:jar:3.16.1-GA (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep22"><i class="icon-info-sign"></i></button> 
+        <div id="_dep22" style="" class=" collapse"> 
          <table border="0" class="bodyTable table table-striped table-hover"> 
           <thead> 
            <tr class="a"> 
@@ -289,8 +587,8 @@
           </tbody> 
          </table> 
         </div></li> 
-       <li>org.unbescape:unbescape:jar:1.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep8"><i class="icon-info-sign"></i></button> 
-        <div id="_dep8" style="" class=" collapse"> 
+       <li>org.unbescape:unbescape:jar:1.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep24"><i class="icon-info-sign"></i></button> 
+        <div id="_dep24" style="" class=" collapse"> 
          <table border="0" class="bodyTable table table-striped table-hover"> 
           <thead> 
            <tr class="a"> 
@@ -304,24 +602,9 @@
           </tbody> 
          </table> 
         </div></li> 
-       <li>org.slf4j:slf4j-api:jar:1.6.1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep10"><i class="icon-info-sign"></i></button> 
-        <div id="_dep10" style="" class=" collapse"> 
-         <table border="0" class="bodyTable table table-striped table-hover"> 
-          <thead> 
-           <tr class="a"> 
-            <th>SLF4J API Module</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr class="b"> 
-            <td> <p><b>Description: </b>The slf4j API</p> <p><b>URL: </b><a class="externalLink" href="http://www.slf4j.org">http://www.slf4j.org</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></p></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-        </div></li> 
       </ul></li> 
-     <li>nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:jar:1.2.5 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep12"><i class="icon-info-sign"></i></button> 
-      <div id="_dep12" style="" class=" collapse"> 
+     <li>nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:jar:1.2.5 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep26"><i class="icon-info-sign"></i></button> 
+      <div id="_dep26" style="" class=" collapse"> 
        <table border="0" class="bodyTable table table-striped table-hover"> 
         <thead> 
          <tr class="a"> 
@@ -335,54 +618,54 @@
         </tbody> 
        </table> 
       </div></li> 
-     <li>com.google.inject:guice:jar:4.0-beta5 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep14"><i class="icon-info-sign"></i></button> 
-      <div id="_dep14" style="" class=" collapse"> 
+     <li>org.slf4j:slf4j-api:jar:1.7.7 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep28"><i class="icon-info-sign"></i></button> 
+      <div id="_dep28" style="" class=" collapse"> 
        <table border="0" class="bodyTable table table-striped table-hover"> 
         <thead> 
          <tr class="a"> 
-          <th>Google Guice - Core Library</th> 
+          <th>SLF4J API Module</th> 
          </tr> 
         </thead> 
         <tbody> 
          <tr class="b"> 
-          <td> <p><b>Description: </b>Guice is a lightweight dependency injection framework for Java 6 and above</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/google/guice/guice">https://github.com/google/guice/guice</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+          <td> <p><b>Description: </b>The slf4j API</p> <p><b>URL: </b><a class="externalLink" href="http://www.slf4j.org">http://www.slf4j.org</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div></li> 
+     <li>org.slf4j:slf4j-simple:jar:1.7.7 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep30"><i class="icon-info-sign"></i></button> 
+      <div id="_dep30" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>SLF4J Simple Binding</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>SLF4J Simple binding</p> <p><b>URL: </b><a class="externalLink" href="http://www.slf4j.org">http://www.slf4j.org</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div></li> 
+     <li>org.reflections:reflections:jar:0.9.9 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep32"><i class="icon-info-sign"></i></button> 
+      <div id="_dep32" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>Reflections</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>Reflections - a Java runtime metadata analysis</p> <p><b>URL: </b><a class="externalLink" href="http://github.com/ronmamo/reflections">http://github.com/ronmamo/reflections</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.wtfpl.net/">WTFPL</a><a class="externalLink" href="http://www.opensource.org/licenses/bsd-license.html">The New BSD License</a></p></td> 
          </tr> 
         </tbody> 
        </table> 
       </div> 
       <ul> 
-       <li>javax.inject:javax.inject:jar:1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep16"><i class="icon-info-sign"></i></button> 
-        <div id="_dep16" style="" class=" collapse"> 
-         <table border="0" class="bodyTable table table-striped table-hover"> 
-          <thead> 
-           <tr class="a"> 
-            <th>javax.inject</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr class="b"> 
-            <td> <p><b>Description: </b>The javax.inject API</p> <p><b>URL: </b><a class="externalLink" href="http://code.google.com/p/atinject/">http://code.google.com/p/atinject/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-        </div></li> 
-       <li>aopalliance:aopalliance:jar:1.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep18"><i class="icon-info-sign"></i></button> 
-        <div id="_dep18" style="" class=" collapse"> 
-         <table border="0" class="bodyTable table table-striped table-hover"> 
-          <thead> 
-           <tr class="a"> 
-            <th>AOP alliance</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr class="b"> 
-            <td> <p><b>Description: </b>AOP Alliance</p> <p><b>URL: </b><a class="externalLink" href="http://aopalliance.sourceforge.net">http://aopalliance.sourceforge.net</a></p> <p><b>Project License: </b>Public Domain</p></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-        </div></li> 
-       <li>com.google.guava:guava:jar:16.0.1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep20"><i class="icon-info-sign"></i></button> 
-        <div id="_dep20" style="" class=" collapse"> 
+       <li>com.google.guava:guava:jar:15.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep34"><i class="icon-info-sign"></i></button> 
+        <div id="_dep34" style="" class=" collapse"> 
          <table border="0" class="bodyTable table table-striped table-hover"> 
           <thead> 
            <tr class="a"> 
@@ -391,42 +674,313 @@
           </thead> 
           <tbody> 
            <tr class="b"> 
-            <td> <p><b>Description: </b>Guava is a suite of core and expanded libraries that include utility classes, google's collections, io classes, and much much more. Guava has only one code dependency - javax.annotation, per the JSR-305 spec.</p> <p><b>URL: </b><a class="externalLink" href="http://code.google.com/p/guava-libraries/guava">http://code.google.com/p/guava-libraries/guava</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+            <td> <p><b>Description: </b>Guava is a suite of core and expanded libraries that include utility classes, google's collections, io classes, and much much more. Guava has two code dependencies - javax.annotation per the JSR-305 spec and javax.inject per the JSR-330 spec.</p> <p><b>URL: </b><a class="externalLink" href="http://code.google.com/p/guava-libraries/guava">http://code.google.com/p/guava-libraries/guava</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div></li> 
+       <li>com.google.code.findbugs:annotations:jar:2.0.1 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep36"><i class="icon-info-sign"></i></button> 
+        <div id="_dep36" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>FindBugs-Annotations</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Annotation supports the FindBugs tool</p> <p><b>URL: </b><a class="externalLink" href="http://findbugs.sourceforge.net/">http://findbugs.sourceforge.net/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser Public License</a></p></td> 
            </tr> 
           </tbody> 
          </table> 
         </div></li> 
       </ul></li> 
-     <li>javax.servlet:javax.servlet-api:jar:3.1.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep22"><i class="icon-info-sign"></i></button> 
-      <div id="_dep22" style="" class=" collapse"> 
+     <li>com.github.mwmahlberg.speedy:speedy-template-thymeleaf:jar:0.1.1-SNAPSHOT (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep38"><i class="icon-info-sign"></i></button> 
+      <div id="_dep38" style="" class=" collapse"> 
        <table border="0" class="bodyTable table table-striped table-hover"> 
         <thead> 
          <tr class="a"> 
-          <th>Java Servlet API</th> 
+          <th>speedy-template-thymeleaf</th> 
          </tr> 
         </thead> 
         <tbody> 
          <tr class="b"> 
-          <td> <p><b>Description: </b>Java.net - The Source for Java Technology Collaboration</p> <p><b>URL: </b><a class="externalLink" href="http://servlet-spec.java.net">http://servlet-spec.java.net</a></p> <p><b>Project License: </b><a class="externalLink" href="https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html">CDDL + GPLv2 with classpath exception</a></p></td> 
+          <td> <p><b>Description: </b>Thymleaf integration into the Speedy Web Application Framework</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-template-thymeleaf">https://github.com/mwmahlberg/speedy/speedy-template-thymeleaf</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
          </tr> 
         </tbody> 
        </table> 
-      </div></li> 
-     <li>com.github.mwmahlberg.speedy:speedy-api:jar:0.1.1-SNAPSHOT (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep24"><i class="icon-info-sign"></i></button> 
-      <div id="_dep24" style="" class=" collapse"> 
+      </div> 
+      <ul> 
+       <li>javax.servlet:javax.servlet-api:jar:3.1.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep40"><i class="icon-info-sign"></i></button> 
+        <div id="_dep40" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>Java Servlet API</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Java.net - The Source for Java Technology Collaboration</p> <p><b>URL: </b><a class="externalLink" href="http://servlet-spec.java.net">http://servlet-spec.java.net</a></p> <p><b>Project License: </b><a class="externalLink" href="https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html">CDDL + GPLv2 with classpath exception</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div></li> 
+       <li>com.github.mwmahlberg.speedy:speedy-api:jar:0.1.1-SNAPSHOT (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep42"><i class="icon-info-sign"></i></button> 
+        <div id="_dep42" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>Speedy API</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Shared API parts of the Speedy Web Application Framework</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-api">https://github.com/mwmahlberg/speedy/speedy-api</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div></li> 
+      </ul></li> 
+     <li>com.fasterxml.jackson.module:jackson-module-guice:jar:2.4.3 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep44"><i class="icon-info-sign"></i></button> 
+      <div id="_dep44" style="" class=" collapse"> 
        <table border="0" class="bodyTable table table-striped table-hover"> 
         <thead> 
          <tr class="a"> 
-          <th>Speedy API</th> 
+          <th>Jackson-module-guice</th> 
          </tr> 
         </thead> 
         <tbody> 
          <tr class="b"> 
-          <td> <p><b>Description: </b>Shared API parts of the Speedy Web Application Framework</p> <p><b>URL: </b><a class="externalLink" href="https://github.com/mwmahlberg/speedy/speedy-api">https://github.com/mwmahlberg/speedy/speedy-api</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+          <td> <p><b>Description: </b>Stuff to make integration with Guice a bit easier</p> <p><b>URL: </b><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">http://wiki.fasterxml.com/JacksonHome</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <ul> 
+       <li>com.fasterxml.jackson.core:jackson-core:jar:2.4.3 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep46"><i class="icon-info-sign"></i></button> 
+        <div id="_dep46" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>Jackson-core</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Core Jackson abstractions, basic JSON streaming API implementation</p> <p><b>URL: </b><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">http://wiki.fasterxml.com/JacksonHome</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div></li> 
+       <li>com.fasterxml.jackson.core:jackson-databind:jar:2.4.3 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep48"><i class="icon-info-sign"></i></button> 
+        <div id="_dep48" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>jackson-databind</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>General data-binding functionality for Jackson: works on core streaming API</p> <p><b>URL: </b><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">http://wiki.fasterxml.com/JacksonHome</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <ul> 
+         <li>com.fasterxml.jackson.core:jackson-annotations:jar:2.4.0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep50"><i class="icon-info-sign"></i></button> 
+          <div id="_dep50" style="" class=" collapse"> 
+           <table border="0" class="bodyTable table table-striped table-hover"> 
+            <thead> 
+             <tr class="a"> 
+              <th>Jackson-annotations</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr class="b"> 
+              <td> <p><b>Description: </b>Core annotations used for value types, used by Jackson data binding package.</p> <p><b>URL: </b><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome">http://wiki.fasterxml.com/JacksonHome</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div></li> 
+        </ul></li> 
+      </ul></li> 
+     <li>com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.2.3 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep52"><i class="icon-info-sign"></i></button> 
+      <div id="_dep52" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>Jackson-JAXRS-JSON</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>Functionality to handle JSON input/output for JAX-RS implementations (like Jersey and RESTeasy) using standard Jackson data binding.</p> <p><b>URL: </b><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome/jackson-jaxrs-json-provider">http://wiki.fasterxml.com/JacksonHome/jackson-jaxrs-json-provider</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a><a class="externalLink" href="http://www.gnu.org/licenses/lgpl-2.1.html">GNU Lesser General Public License, Version 2.1</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <ul> 
+       <li>com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.2.3 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep54"><i class="icon-info-sign"></i></button> 
+        <div id="_dep54" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>Jackson-JAXRS-base</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Pile of code that is shared by all Jackson-based JAX-RS providers.</p> <p><b>URL: </b><a class="externalLink" href="http://wiki.fasterxml.com/JacksonHome/jackson-jaxrs-base">http://wiki.fasterxml.com/JacksonHome/jackson-jaxrs-base</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a><a class="externalLink" href="http://www.gnu.org/licenses/lgpl-2.1.html">GNU Lesser General Public License, Version 2.1</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div></li> 
+      </ul></li> 
+     <li>com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.2.3 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep56"><i class="icon-info-sign"></i></button> 
+      <div id="_dep56" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>Jackson-module-JAXB-annotations</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>Support for using JAXB annotations as an alternative to &quot;native&quot; Jackson annotations, for configuring data binding.</p> <p><b>URL: </b><a class="externalLink" href="http://wiki.fasterxml.com/JacksonJAXBAnnotations">http://wiki.fasterxml.com/JacksonJAXBAnnotations</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a><a class="externalLink" href="http://www.gnu.org/licenses/lgpl-2.1.html">GNU Lesser General Public License, Version 2.1</a></p></td> 
          </tr> 
         </tbody> 
        </table> 
       </div></li> 
+     <li>commons-cli:commons-cli:jar:1.2 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep58"><i class="icon-info-sign"></i></button> 
+      <div id="_dep58" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>Commons CLI</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>Commons CLI provides a simple API for presenting, processing and validating a command line interface.</p> <p><b>URL: </b><a class="externalLink" href="http://commons.apache.org/cli/">http://commons.apache.org/cli/</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div></li> 
+     <li>org.slf4j:jul-to-slf4j:jar:1.7.7 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep60"><i class="icon-info-sign"></i></button> 
+      <div id="_dep60" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>JUL to SLF4J bridge</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>JUL to SLF4J bridge</p> <p><b>URL: </b><a class="externalLink" href="http://www.slf4j.org">http://www.slf4j.org</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div></li> 
+     <li>org.eclipse.jetty:jetty-servlet:jar:9.3.0.M0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep62"><i class="icon-info-sign"></i></button> 
+      <div id="_dep62" style="" class=" collapse"> 
+       <table border="0" class="bodyTable table table-striped table-hover"> 
+        <thead> 
+         <tr class="a"> 
+          <th>Jetty :: Servlet Handling</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr class="b"> 
+          <td> <p><b>Description: </b>Jetty Servlet Container</p> <p><b>URL: </b><a class="externalLink" href="http://www.eclipse.org/jetty">http://www.eclipse.org/jetty</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a><a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <ul> 
+       <li>org.eclipse.jetty:jetty-security:jar:9.3.0.M0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep64"><i class="icon-info-sign"></i></button> 
+        <div id="_dep64" style="" class=" collapse"> 
+         <table border="0" class="bodyTable table table-striped table-hover"> 
+          <thead> 
+           <tr class="a"> 
+            <th>Jetty :: Security</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr class="b"> 
+            <td> <p><b>Description: </b>Jetty security infrastructure</p> <p><b>URL: </b><a class="externalLink" href="http://www.eclipse.org/jetty">http://www.eclipse.org/jetty</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a><a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></p></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <ul> 
+         <li>org.eclipse.jetty:jetty-server:jar:9.3.0.M0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep66"><i class="icon-info-sign"></i></button> 
+          <div id="_dep66" style="" class=" collapse"> 
+           <table border="0" class="bodyTable table table-striped table-hover"> 
+            <thead> 
+             <tr class="a"> 
+              <th>Jetty :: Server Core</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr class="b"> 
+              <td> <p><b>Description: </b>The core jetty server artifact.</p> <p><b>URL: </b><a class="externalLink" href="http://www.eclipse.org/jetty">http://www.eclipse.org/jetty</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a><a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></p></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div> 
+          <ul> 
+           <li>org.eclipse.jetty:jetty-http:jar:9.3.0.M0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep68"><i class="icon-info-sign"></i></button> 
+            <div id="_dep68" style="" class=" collapse"> 
+             <table border="0" class="bodyTable table table-striped table-hover"> 
+              <thead> 
+               <tr class="a"> 
+                <th>Jetty :: Http Utility</th> 
+               </tr> 
+              </thead> 
+              <tbody> 
+               <tr class="b"> 
+                <td> <p><b>Description: </b>Administrative parent pom for Jetty modules</p> <p><b>URL: </b><a class="externalLink" href="http://www.eclipse.org/jetty">http://www.eclipse.org/jetty</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a><a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></p></td> 
+               </tr> 
+              </tbody> 
+             </table> 
+            </div> 
+            <ul> 
+             <li>org.eclipse.jetty:jetty-util:jar:9.3.0.M0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep70"><i class="icon-info-sign"></i></button> 
+              <div id="_dep70" style="" class=" collapse"> 
+               <table border="0" class="bodyTable table table-striped table-hover"> 
+                <thead> 
+                 <tr class="a"> 
+                  <th>Jetty :: Utilities</th> 
+                 </tr> 
+                </thead> 
+                <tbody> 
+                 <tr class="b"> 
+                  <td> <p><b>Description: </b>Utility classes for Jetty</p> <p><b>URL: </b><a class="externalLink" href="http://www.eclipse.org/jetty">http://www.eclipse.org/jetty</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a><a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></p></td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+              </div></li> 
+            </ul></li> 
+           <li>org.eclipse.jetty:jetty-io:jar:9.3.0.M0 (compile) <button title="Information" class="btn btn-link btn-small" type="button" data-toggle="collapse" data-target="#_dep72"><i class="icon-info-sign"></i></button> 
+            <div id="_dep72" style="" class=" collapse"> 
+             <table border="0" class="bodyTable table table-striped table-hover"> 
+              <thead> 
+               <tr class="a"> 
+                <th>Jetty :: IO Utility</th> 
+               </tr> 
+              </thead> 
+              <tbody> 
+               <tr class="b"> 
+                <td> <p><b>Description: </b>Administrative parent pom for Jetty modules</p> <p><b>URL: </b><a class="externalLink" href="http://www.eclipse.org/jetty">http://www.eclipse.org/jetty</a></p> <p><b>Project License: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License - Version 2.0</a><a class="externalLink" href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a></p></td> 
+               </tr> 
+              </tbody> 
+             </table> 
+            </div></li> 
+          </ul></li> 
+        </ul></li> 
+      </ul></li> 
     </ul></li> 
   </ul> 
  </div> 
@@ -434,13 +988,21 @@
 <a name="Licenses"></a> 
 <div class="section"> 
  <h2 id="Licenses">Licenses</h2> 
- <p><b>CDDL + GPLv2 with classpath exception: </b>Java Servlet API</p> 
  <p><b>Public Domain: </b>AOP alliance</p> 
+ <p><b>CDDL + GPLv2 with classpath exception: </b>Java Servlet API</p> 
+ <p><b>Eclipse Public License - Version 1.0: </b>Jetty :: Http Utility, Jetty :: IO Utility, Jetty :: Security, Jetty :: Server Core, Jetty :: Servlet Handling, Jetty :: Utilities</p> 
+ <p><b>WTFPL: </b>Reflections</p> 
  <p><b>LGPL 2.1: </b>Javassist</p> 
- <p><b>Apache License 2.0: </b>Javassist</p> 
+ <p><b>GNU Lesser General Public License, Version 2.1: </b>Jackson-JAXRS-JSON, Jackson-JAXRS-base, Jackson-module-JAXB-annotations</p> 
  <p><b>MPL 1.1: </b>Javassist</p> 
- <p><b>MIT License: </b>SLF4J API Module</p> 
- <p><b>The Apache Software License, Version 2.0: </b>Google Guice - Core Library, Guava: Google Core Libraries for Java, OGNL - Object Graph Navigation Library, Speedy API, Thymeleaf Layout Dialect, javax.inject, speedy-template-thymeleaf, thymeleaf, unbescape</p> 
+ <p><b>The Apache Software License, Version 2.0: </b>Commons CLI, Google Guice - Core Library, Google Guice - Extensions - Servlet, Guava: Google Core Libraries for Java, Jackson-JAXRS-JSON, Jackson-JAXRS-base, Jackson-annotations, Jackson-core, Jackson-module-JAXB-annotations, Jackson-module-guice, OGNL - Object Graph Navigation Library, Speedy API, Speedy Core, Thymeleaf Layout Dialect, jackson-databind, javax.inject, speedy-template-thymeleaf, thymeleaf, unbescape</p> 
+ <p><b>GNU Lesser Public License: </b>FindBugs-Annotations</p> 
+ <p><b>CDDL 1.1: </b>jersey-core, jersey-guice, jersey-server, jersey-servlet</p> 
+ <p><b>GPL2 w/ CPE: </b>jersey-core, jersey-guice, jersey-server, jersey-servlet</p> 
+ <p><b>Apache Software License - Version 2.0: </b>Jetty :: Http Utility, Jetty :: IO Utility, Jetty :: Security, Jetty :: Server Core, Jetty :: Servlet Handling, Jetty :: Utilities</p> 
+ <p><b>Apache License 2.0: </b>Javassist</p> 
+ <p><b>MIT License: </b>JUL to SLF4J bridge, SLF4J API Module, SLF4J Simple Binding</p> 
+ <p><b>The New BSD License: </b>Reflections</p> 
 </div> 
 <a name="Dependency_File_Details"></a> 
 <div class="section"> 
@@ -479,6 +1041,69 @@
     <td>debug</td> 
    </tr> 
    <tr class="a"> 
+    <td>jackson-annotations-2.4.0.jar</td> 
+    <td>37.70 kB</td> 
+    <td>63</td> 
+    <td>51</td> 
+    <td>1</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>jackson-core-2.4.3.jar</td> 
+    <td>220.01 kB</td> 
+    <td>106</td> 
+    <td>84</td> 
+    <td>8</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>jackson-databind-2.4.3.jar</td> 
+    <td>1.03 MB</td> 
+    <td>588</td> 
+    <td>554</td> 
+    <td>20</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>jackson-jaxrs-base-2.2.3.jar</td> 
+    <td>19.55 kB</td> 
+    <td>27</td> 
+    <td>12</td> 
+    <td>4</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>jackson-jaxrs-json-provider-2.2.3.jar</td> 
+    <td>14.89 kB</td> 
+    <td>29</td> 
+    <td>11</td> 
+    <td>2</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>jackson-module-guice-2.4.3.jar</td> 
+    <td>9.30 kB</td> 
+    <td>18</td> 
+    <td>5</td> 
+    <td>1</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>jackson-module-jaxb-annotations-2.2.3.jar</td> 
+    <td>25.38 kB</td> 
+    <td>30</td> 
+    <td>12</td> 
+    <td>3</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
     <td>speedy-api-0.1.1-SNAPSHOT.jar</td> 
     <td>3.59 kB</td> 
     <td>14</td> 
@@ -487,16 +1112,34 @@
     <td>1.6</td> 
     <td>debug</td> 
    </tr> 
-   <tr class="b"> 
-    <td>guava-16.0.1.jar</td> 
-    <td>2.12 MB</td> 
-    <td>1,709</td> 
-    <td>1,678</td> 
-    <td>17</td> 
+   <tr class="a"> 
+    <td>speedy-template-thymeleaf-0.1.1-SNAPSHOT.jar</td> 
+    <td>4.52 kB</td> 
+    <td>14</td> 
+    <td>2</td> 
+    <td>1</td> 
     <td>1.6</td> 
     <td>debug</td> 
    </tr> 
+   <tr class="b"> 
+    <td>annotations-2.0.1.jar</td> 
+    <td>72.81 kB</td> 
+    <td>134</td> 
+    <td>62</td> 
+    <td>5</td> 
+    <td>1.5</td> 
+    <td>debug</td> 
+   </tr> 
    <tr class="a"> 
+    <td>guava-15.0.jar</td> 
+    <td>2.07 MB</td> 
+    <td>1,650</td> 
+    <td>1,622</td> 
+    <td>16</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
     <td>guice-4.0-beta5.jar</td> 
     <td>627.68 kB</td> 
     <td>497</td> 
@@ -505,7 +1148,61 @@
     <td>1.6</td> 
     <td>debug</td> 
    </tr> 
+   <tr class="a"> 
+    <td>guice-servlet-4.0-beta5.jar</td> 
+    <td>74.58 kB</td> 
+    <td>75</td> 
+    <td>66</td> 
+    <td>1</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
    <tr class="b"> 
+    <td>jersey-core-1.18.1.jar</td> 
+    <td>468.09 kB</td> 
+    <td>411</td> 
+    <td>358</td> 
+    <td>26</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>jersey-server-1.18.1.jar</td> 
+    <td>668.17 kB</td> 
+    <td>568</td> 
+    <td>489</td> 
+    <td>46</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>jersey-servlet-1.18.1.jar</td> 
+    <td>124.15 kB</td> 
+    <td>107</td> 
+    <td>77</td> 
+    <td>7</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>jersey-guice-1.18.1.jar</td> 
+    <td>15.78 kB</td> 
+    <td>22</td> 
+    <td>8</td> 
+    <td>3</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>commons-cli-1.2.jar</td> 
+    <td>40.16 kB</td> 
+    <td>35</td> 
+    <td>22</td> 
+    <td>1</td> 
+    <td>1.4</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
     <td>javax.inject-1.jar</td> 
     <td>2.44 kB</td> 
     <td>8</td> 
@@ -514,7 +1211,7 @@
     <td>1.5</td> 
     <td>release</td> 
    </tr> 
-   <tr class="a"> 
+   <tr class="b"> 
     <td>javax.servlet-api-3.1.0.jar</td> 
     <td>93.56 kB</td> 
     <td>103</td> 
@@ -523,7 +1220,7 @@
     <td>1.6</td> 
     <td>debug</td> 
    </tr> 
-   <tr class="b"> 
+   <tr class="a"> 
     <td>thymeleaf-layout-dialect-1.2.5.jar</td> 
     <td>23.58 kB</td> 
     <td>29</td> 
@@ -532,7 +1229,7 @@
     <td>1.6</td> 
     <td>debug</td> 
    </tr> 
-   <tr class="a"> 
+   <tr class="b"> 
     <td>ognl-3.0.6.jar</td> 
     <td>222.65 kB</td> 
     <td>140</td> 
@@ -541,7 +1238,61 @@
     <td>1.5</td> 
     <td>debug</td> 
    </tr> 
+   <tr class="a"> 
+    <td>jetty-http-9.3.0.M0.jar</td> 
+    <td>116.13 kB</td> 
+    <td>77</td> 
+    <td>60</td> 
+    <td>1</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
    <tr class="b"> 
+    <td>jetty-io-9.3.0.M0.jar</td> 
+    <td>105.98 kB</td> 
+    <td>89</td> 
+    <td>76</td> 
+    <td>2</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>jetty-security-9.3.0.M0.jar</td> 
+    <td>91.17 kB</td> 
+    <td>68</td> 
+    <td>55</td> 
+    <td>2</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>jetty-server-9.3.0.M0.jar</td> 
+    <td>402.33 kB</td> 
+    <td>210</td> 
+    <td>191</td> 
+    <td>7</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>jetty-servlet-9.3.0.M0.jar</td> 
+    <td>111.96 kB</td> 
+    <td>59</td> 
+    <td>45</td> 
+    <td>3</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>jetty-util-9.3.0.M0.jar</td> 
+    <td>345.61 kB</td> 
+    <td>220</td> 
+    <td>198</td> 
+    <td>10</td> 
+    <td>1.6</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
     <td>javassist-3.16.1-GA.jar</td> 
     <td>643.89 kB</td> 
     <td>400</td> 
@@ -550,13 +1301,40 @@
     <td>1.5</td> 
     <td>debug</td> 
    </tr> 
+   <tr class="b"> 
+    <td>reflections-0.9.9.jar</td> 
+    <td>138.42 kB</td> 
+    <td>117</td> 
+    <td>103</td> 
+    <td>6</td> 
+    <td>1.5</td> 
+    <td>debug</td> 
+   </tr> 
    <tr class="a"> 
-    <td>slf4j-api-1.6.1.jar</td> 
-    <td>24.90 kB</td> 
-    <td>34</td> 
-    <td>23</td> 
+    <td>jul-to-slf4j-1.7.7.jar</td> 
+    <td>4.62 kB</td> 
+    <td>11</td> 
+    <td>1</td> 
+    <td>1</td> 
+    <td>1.5</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>slf4j-api-1.7.7.jar</td> 
+    <td>28.57 kB</td> 
+    <td>35</td> 
+    <td>24</td> 
     <td>3</td> 
-    <td>1.3</td> 
+    <td>1.5</td> 
+    <td>debug</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>slf4j-simple-1.7.7.jar</td> 
+    <td>10.43 kB</td> 
+    <td>16</td> 
+    <td>6</td> 
+    <td>1</td> 
+    <td>1.5</td> 
     <td>debug</td> 
    </tr> 
    <tr class="b"> 
@@ -578,22 +1356,22 @@
     <td>debug</td> 
    </tr> 
    <tr class="a"> 
-    <td>12</td> 
-    <td>4.61 MB</td> 
-    <td>3,511</td> 
-    <td>3,227</td> 
-    <td>106</td> 
+    <td>36</td> 
+    <td>8.64 MB</td> 
+    <td>6,547</td> 
+    <td>5,720</td> 
+    <td>267</td> 
     <td>1.6</td> 
-    <td>11</td> 
+    <td>35</td> 
    </tr> 
    <tr class="b"> 
-    <td>compile: 12</td> 
-    <td>compile: 4.61 MB</td> 
-    <td>compile: 3,511</td> 
-    <td>compile: 3,227</td> 
-    <td>compile: 106</td> 
+    <td>compile: 36</td> 
+    <td>compile: 8.64 MB</td> 
+    <td>compile: 6,547</td> 
+    <td>compile: 5,720</td> 
+    <td>compile: 267</td> 
     <td>-</td> 
-    <td>compile: 11</td> 
+    <td>compile: 35</td> 
    </tr> 
   </tbody> 
  </table> 
@@ -611,6 +1389,18 @@
    </tr> 
   </thead> 
   <tbody> 
+   <tr class="b"> 
+    <td>sonatype-snapshots</td> 
+    <td><a class="externalLink" href="https://oss.sonatype.org/content/groups/jetty">https://oss.sonatype.org/content/groups/jetty</a></td> 
+    <td>Yes</td> 
+    <td>Yes</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>apache.snapshots</td> 
+    <td><a class="externalLink" href="http://people.apache.org/repo/m2-snapshot-repository">http://people.apache.org/repo/m2-snapshot-repository</a></td> 
+    <td>-</td> 
+    <td>Yes</td> 
+   </tr> 
    <tr class="b"> 
     <td>sonatype-nexus-snapshots</td> 
     <td><a class="externalLink" href="https://oss.sonatype.org/content/repositories/snapshots">https://oss.sonatype.org/content/repositories/snapshots</a></td> 
@@ -630,9 +1420,21 @@
     <td>-</td> 
    </tr> 
    <tr class="a"> 
+    <td>eclipselink.repository</td> 
+    <td><a class="externalLink" href="http://www.eclipse.org/downloads/download.php?r=1&amp;nf=1&amp;file=/rt/eclipselink/maven.repo">http://www.eclipse.org/downloads/download.php?r=1&amp;nf=1&amp;file=/rt/eclipselink/maven.repo</a></td> 
+    <td>Yes</td> 
+    <td>Yes</td> 
+   </tr> 
+   <tr class="b"> 
     <td>jvnet-nexus-snapshots</td> 
     <td><a class="externalLink" href="https://maven.java.net/content/repositories/snapshots">https://maven.java.net/content/repositories/snapshots</a></td> 
     <td>-</td> 
+    <td>Yes</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>repository.jboss.org</td> 
+    <td><a class="externalLink" href="http://repository.jboss.org/nexus/content/groups/public/">http://repository.jboss.org/nexus/content/groups/public/</a></td> 
+    <td>Yes</td> 
     <td>Yes</td> 
    </tr> 
   </tbody> 
@@ -642,19 +1444,27 @@
   <thead> 
    <tr class="b"> 
     <th>Total</th> 
+    <th>sonatype-snapshots</th> 
+    <th>apache.snapshots</th> 
     <th>sonatype-nexus-snapshots</th> 
     <th>glassfish-repository</th> 
     <th>central</th> 
+    <th>eclipselink.repository</th> 
     <th>jvnet-nexus-snapshots</th> 
+    <th>repository.jboss.org</th> 
    </tr> 
   </thead> 
   <thead> 
    <tr class="a"> 
     <th>Artifact</th> 
+    <th>sonatype-snapshots</th> 
+    <th>apache.snapshots</th> 
     <th>sonatype-nexus-snapshots</th> 
     <th>glassfish-repository</th> 
     <th>central</th> 
+    <th>eclipselink.repository</th> 
     <th>jvnet-nexus-snapshots</th> 
+    <th>repository.jboss.org</th> 
    </tr> 
   </thead> 
   <tbody> 
@@ -662,92 +1472,408 @@
     <td>aopalliance:aopalliance:jar:1.0</td> 
     <td>-</td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="http://repository.jboss.org/nexus/content/groups/public//aopalliance/aopalliance/1.0/aopalliance-1.0.jar"><i class="icon-ok"></i></a></td> 
+   </tr> 
+   <tr class="a"> 
+    <td>com.fasterxml.jackson.core:jackson-annotations:jar:2.4.0</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>com.fasterxml.jackson.core:jackson-core:jar:2.4.3</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.3/jackson-core-2.4.3.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
    </tr> 
    <tr class="a"> 
+    <td>com.fasterxml.jackson.core:jackson-databind:jar:2.4.3</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.3/jackson-databind-2.4.3.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.2.3</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.2.3/jackson-jaxrs-base-2.2.3.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.2.3</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.2.3/jackson-jaxrs-json-provider-2.2.3.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>com.fasterxml.jackson.module:jackson-module-guice:jar:2.4.3</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-guice/2.4.3/jackson-module-guice-2.4.3.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.2.3</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.2.3/jackson-module-jaxb-annotations-2.2.3.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
     <td>com.github.mwmahlberg.speedy:speedy-api:jar:0.1.1-SNAPSHOT</td> 
     <td>-</td> 
     <td>-</td> 
     <td>-</td> 
     <td>-</td> 
-   </tr> 
-   <tr class="b"> 
-    <td>com.google.guava:guava:jar:16.0.1</td> 
     <td>-</td> 
     <td>-</td> 
-    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
     <td>-</td> 
    </tr> 
    <tr class="a"> 
+    <td>com.github.mwmahlberg.speedy:speedy-template-thymeleaf:jar:0.1.1-SNAPSHOT</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>com.google.code.findbugs:annotations:jar:2.0.1</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>com.google.guava:guava:jar:15.0</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/google/guava/guava/15.0/guava-15.0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
     <td>com.google.inject:guice:jar:4.0-beta5</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
     <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/google/inject/guice/4.0-beta5/guice-4.0-beta5.jar"><i class="icon-ok"></i></a></td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>com.google.inject.extensions:guice-servlet:jar:4.0-beta5</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/google/inject/extensions/guice-servlet/4.0-beta5/guice-servlet-4.0-beta5.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
    </tr> 
    <tr class="b"> 
+    <td>com.sun.jersey:jersey-core:jar:1.18.1</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-core/1.18.1/jersey-core-1.18.1.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>com.sun.jersey:jersey-server:jar:1.18.1</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-server/1.18.1/jersey-server-1.18.1.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>com.sun.jersey:jersey-servlet:jar:1.18.1</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-servlet/1.18.1/jersey-servlet-1.18.1.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>com.sun.jersey.contribs:jersey-guice:jar:1.18.1</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/com/sun/jersey/contribs/jersey-guice/1.18.1/jersey-guice-1.18.1.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>commons-cli:commons-cli:jar:1.2</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
     <td>javax.inject:javax.inject:jar:1</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
     <td><a class="externalLink" href="http://download.java.net/maven/glassfish/javax/inject/javax.inject/1/javax.inject-1.jar"><i class="icon-ok"></i></a></td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.jar"><i class="icon-ok"></i></a></td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
    </tr> 
-   <tr class="a"> 
+   <tr class="b"> 
     <td>javax.servlet:javax.servlet-api:jar:3.1.0</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
     <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"><i class="icon-ok"></i></a></td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
    </tr> 
-   <tr class="b"> 
+   <tr class="a"> 
     <td>nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:jar:1.2.5</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
     <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/nz/net/ultraq/thymeleaf/thymeleaf-layout-dialect/1.2.5/thymeleaf-layout-dialect-1.2.5.jar"><i class="icon-ok"></i></a></td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
    </tr> 
-   <tr class="a"> 
+   <tr class="b"> 
     <td>ognl:ognl:jar:3.0.6</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
     <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/ognl/ognl/3.0.6/ognl-3.0.6.jar"><i class="icon-ok"></i></a></td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>org.eclipse.jetty:jetty-http:jar:9.3.0.M0</td> 
+    <td><a class="externalLink" href="https://oss.sonatype.org/content/groups/jetty/org/eclipse/jetty/jetty-http/9.3.0.M0/jetty-http-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.3.0.M0/jetty-http-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
    </tr> 
    <tr class="b"> 
+    <td>org.eclipse.jetty:jetty-io:jar:9.3.0.M0</td> 
+    <td><a class="externalLink" href="https://oss.sonatype.org/content/groups/jetty/org/eclipse/jetty/jetty-io/9.3.0.M0/jetty-io-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.3.0.M0/jetty-io-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>org.eclipse.jetty:jetty-security:jar:9.3.0.M0</td> 
+    <td><a class="externalLink" href="https://oss.sonatype.org/content/groups/jetty/org/eclipse/jetty/jetty-security/9.3.0.M0/jetty-security-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-security/9.3.0.M0/jetty-security-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>org.eclipse.jetty:jetty-server:jar:9.3.0.M0</td> 
+    <td><a class="externalLink" href="https://oss.sonatype.org/content/groups/jetty/org/eclipse/jetty/jetty-server/9.3.0.M0/jetty-server-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-server/9.3.0.M0/jetty-server-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>org.eclipse.jetty:jetty-servlet:jar:9.3.0.M0</td> 
+    <td><a class="externalLink" href="https://oss.sonatype.org/content/groups/jetty/org/eclipse/jetty/jetty-servlet/9.3.0.M0/jetty-servlet-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-servlet/9.3.0.M0/jetty-servlet-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>org.eclipse.jetty:jetty-util:jar:9.3.0.M0</td> 
+    <td><a class="externalLink" href="https://oss.sonatype.org/content/groups/jetty/org/eclipse/jetty/jetty-util/9.3.0.M0/jetty-util-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.3.0.M0/jetty-util-9.3.0.M0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
     <td>org.javassist:javassist:jar:3.16.1-GA</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
     <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar"><i class="icon-ok"></i></a></td> 
     <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="http://repository.jboss.org/nexus/content/groups/public//org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar"><i class="icon-ok"></i></a></td> 
+   </tr> 
+   <tr class="b"> 
+    <td>org.reflections:reflections:jar:0.9.9</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/reflections/reflections/0.9.9/reflections-0.9.9.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
    </tr> 
    <tr class="a"> 
-    <td>org.slf4j:slf4j-api:jar:1.6.1</td> 
+    <td>org.slf4j:jul-to-slf4j:jar:1.7.7</td> 
     <td>-</td> 
     <td>-</td> 
-    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/slf4j/jul-to-slf4j/1.7.7/jul-to-slf4j-1.7.7.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="b"> 
+    <td>org.slf4j:slf4j-api:jar:1.7.7</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+   </tr> 
+   <tr class="a"> 
+    <td>org.slf4j:slf4j-simple:jar:1.7.7</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
+    <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.7/slf4j-simple-1.7.7.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
    </tr> 
    <tr class="b"> 
     <td>org.thymeleaf:thymeleaf:jar:2.1.3.RELEASE</td> 
     <td>-</td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf/2.1.3.RELEASE/thymeleaf-2.1.3.RELEASE.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
    </tr> 
    <tr class="a"> 
     <td>org.unbescape:unbescape:jar:1.0</td> 
     <td>-</td> 
     <td>-</td> 
+    <td>-</td> 
+    <td>-</td> 
     <td><a class="externalLink" href="https://repo.maven.apache.org/maven2/org/unbescape/unbescape/1.0/unbescape-1.0.jar"><i class="icon-ok"></i></a></td> 
+    <td>-</td> 
+    <td>-</td> 
     <td>-</td> 
    </tr> 
    <tr class="a"> 
-    <td>12 (compile: 12)</td> 
+    <td>36 (compile: 36)</td> 
+    <td>6</td> 
+    <td>0</td> 
     <td>0</td> 
     <td>1</td> 
-    <td>11</td> 
+    <td>34</td> 
     <td>0</td> 
+    <td>0</td> 
+    <td>2</td> 
    </tr> 
   </tbody> 
  </table> 
