@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.github.mwmahlberg.speedy</groupId>
 		<artifactId>Speedy</artifactId>
-		<version>0.1.2-SNAPSHOT</version>
+		<version>0.1.1</version>
 		<relativePath>../</relativePath>
 	</parent>
 	<name>Speedy API</name>
