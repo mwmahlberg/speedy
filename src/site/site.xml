@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.4.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.4.0 http://maven.apache.org/xsd/decoration-1.4.0.xsd"
+	name="Speedy Web Application Framework">
+	
+	<skin>
+		<groupId>lt.velykis.maven.skins</groupId>
+		<artifactId>reflow-maven-skin</artifactId>
+		<version>1.1.1</version>
+	</skin>
+	<publishDate position="bottom" />
+	<version position="bottom"/>
+	<custom>
+		<reflowSkin>
+			<theme>bootswatch-cosmo</theme>
+			<highlightJs>true</highlightJs>
+			<highlightJsTheme>github</highlightJsTheme>
+			<toc>sidebar</toc>
+			<smoothScroll>true</smoothScroll>
+			<slogan>Java on steroids.</slogan>
+			<bottomNav>
+				<column></column>
+			</bottomNav>
+			<bottomDescription quote="true">Guice + Jersey + Jetty</bottomDescription>
+			<brand>
+				<name><![CDATA[
+    				<img src="http://mwmahlberg.github.io/speedy/images/logo.png" height="30" width="89"/> Web Application framework
+    			]]></name>
+				<href>http://mwmahlberg.github.io/speedy/</href>
+			</brand>
+		</reflowSkin>
+	</custom>
+
+	<body>
+		<breadcrumbs>
+			<!-- <item name="Speedy" href="index.html" /> -->
+		</breadcrumbs>
+		<menu name="Documentation" inherit="none">
+			<item name="Quickstart" href="quickstart.html" />
+			<item name="Slightly longer introduction" href="introduction.html" />
+		</menu>
+		<menu ref="reports" inherit="bottom"/>
+		<menu ref="modules" inherit="top"/>
+	</body>
+</project>

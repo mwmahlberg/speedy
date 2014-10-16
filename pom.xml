@@ -1,16 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.mwmahlberg.speedy</groupId>
-	<artifactId>Speedy</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>Speedy Web Application Framework</name>
 
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.mwmahlberg.speedy</groupId>
+	<artifactId>Speedy</artifactId>
+	<version>0.1.1</version>
+	<packaging>pom</packaging>
+	<name>Speedy Web Application Framework</name>
+	<description>The Speedy Web Application Framework (SWAF) is aimed to be small, easy to deploy and (more buzzwords here)</description>
+	<inceptionYear>2014</inceptionYear>
 
 	<developers>
 		<developer>
@@ -34,33 +37,113 @@
 		</license>
 	</licenses>
 
+	<scm>
+
+		<url>https://github.com/mwmahlberg/speedy</url>
+		<connection>scm:git:https://github.com/mwmahlberg/speedy.git</connection>
+		<developerConnection>scm:git:git@github.com:mwmahlberg/speedy.git</developerConnection>
+	</scm>
+
+
+
+	<url>http://mwmahlberg.github.io/speedy</url>
+	<ciManagement>
+		<url>https://travis-ci.org/mwmahlberg/speedy</url>
+	</ciManagement>
+
+	<issueManagement>
+		<url>https://github.com/mwmahlberg/speedy/issues</url>
+	</issueManagement>
+
+	<reporting>
+		<plugins>
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-project-info-reports-plugin</artifactId> -->
+			<!-- <version>2.7</version> -->
+			<!-- </plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-javadoc-plugin</artifactId> -->
+			<!-- <version>2.9</version> -->
+			<!-- <reportSets> -->
+			<!-- <reportSet>by default, id = "default" -->
+			<!-- <reports>select non-aggregate reports -->
+			<!-- <report>javadoc</report> -->
+			<!-- <report>test-javadoc</report> -->
+			<!-- </reports> -->
+			<!-- </reportSet> -->
+			<!-- <reportSet>aggregate reportSet, to define in poms having modules -->
+			<!-- <id>aggregate</id> -->
+			<!-- <inherited>false</inherited>don't run aggregate in child modules -->
+			<!-- <reports> -->
+			<!-- <report>aggregate</report> -->
+			<!-- </reports> -->
+			<!-- </reportSet> -->
+			<!-- </reportSets> -->
+			<!-- </plugin> -->
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-jxr-plugin</artifactId> -->
+			<!-- <version>2.4</version> -->
+			<!-- <configuration> -->
+			<!-- <linkJavadoc>true</linkJavadoc> -->
+			<!-- </configuration> -->
+			<!-- <reportSets> -->
+			<!-- <reportSet> -->
+			<!-- <id>aggregate</id> -->
+			<!-- <reports> -->
+			<!-- <report>aggregate</report> -->
+			<!-- <report>test-aggregate</report> -->
+			<!-- </reports> -->
+			<!-- </reportSet> -->
+			<!-- </reportSets> -->
+			<!-- </plugin> -->
+		</plugins>
+	</reporting>
+
+
+	<distributionManagement>
+		<site>
+			<id>github-pages-site</id>
+			<name>Project page on github.io</name>
+			<url>http://mwmahlberg.github.io/speedy</url>
+		</site>
+	</distributionManagement>
+
+
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
+
 	<modules>
 		<module>speedy-api</module>
 		<module>speedy-core</module>
 		<module>speedy-template-thymeleaf</module>
+		<module>speedy-archetype</module>
 	</modules>
-	<inceptionYear>2014</inceptionYear>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-servlet</artifactId>
-				<version>9.3.0.M0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-server</artifactId>
-				<version>9.3.0.M0</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-  <build>
-    <plugins>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -85,6 +168,29 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.4</version>
+				<configuration>
+					<generateProjectInfo>true</generateProjectInfo>
+					<generateReports>true</generateReports>
+					<!-- <skipDeploy>true</skipDeploy> -->
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>lt.velykis.maven.skins</groupId>
+						<artifactId>reflow-velocity-tools</artifactId>
+						<version>1.1.1</version>
+					</dependency>
+					<!-- Reflow skin requires Velocity >= 1.7 -->
+					<dependency>
+						<groupId>org.apache.velocity</groupId>
+						<artifactId>velocity</artifactId>
+						<version>1.7</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 			<plugin>
 				<groupId>external.atlassian.jgitflow</groupId>
 				<artifactId>jgitflow-maven-plugin</artifactId>
@@ -93,19 +199,30 @@
 					<!-- see goals wiki page for configuration options -->
 				</configuration>
 			</plugin>
+
 			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.3</version>
-				<extensions>true</extensions>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.10</version>
 				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>false</autoReleaseAfterClose>
+					<server>github-pages-site</server>
+					<message>Adding new site fo ${project.artifactId} -
+						${project.version}</message>
+					<merge>true</merge>
 				</configuration>
+				<executions>
+					<execution>
+						<id>publish-ghpages</id>
+						<phase>site</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
-    </plugins>
-  </build>
+		</plugins>
+	</build>
+
 	<profiles>
 		<profile>
 			<id>sign-artifacts</id>
@@ -131,17 +248,20 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.3</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>false</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
 	</profiles>
-	<scm>
-		<url>https://github.com/mwmahlberg/speedy</url>
-		<connection>scm:git:https://github.com/mwmahlberg/speedy.git</connection>
-		<developerConnection>scm:git:git@github.com:mwmahlberg/speedy.git</developerConnection>
-	</scm>
-	<url>https://github.com/mwmahlberg/speedy</url>
-	<issueManagement>
-		<url>https://github.com/mwmahlberg/speedy/issues</url>
-	</issueManagement>
+
 </project>

@@ -2,19 +2,15 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>speedy-core</artifactId>
-	
+
 	<parent>
 		<groupId>com.github.mwmahlberg.speedy</groupId>
 		<artifactId>Speedy</artifactId>
-		<version>0.1.1-SNAPSHOT</version>
+		<version>0.1.1</version>
 		<relativePath>../</relativePath>
 	</parent>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-servlet</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>com.google.inject.extensions</groupId>
 			<artifactId>guice-servlet</artifactId>
@@ -53,7 +49,7 @@
 		<dependency>
 			<groupId>com.github.mwmahlberg.speedy</groupId>
 			<artifactId>speedy-template-thymeleaf</artifactId>
-			<version>0.1.1-SNAPSHOT</version>
+			<version>0.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.module</groupId>
@@ -76,13 +72,33 @@
 			<version>1.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
 			<version>1.7.7</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>9.3.0.M0</version>
+		</dependency>
 	</dependencies>
+	<name>Speedy Core</name>
+	<description>The Core of the Speedy Web Application Framework.</description>
+	<url>http://mwmahlberg.github.io/speedy/${project.artifactId}</url>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.10</version>
+				<configuration>
+					<server>github-pages-site</server>
+					<message>Adding new site fo ${project.artifactId} -
+						${project.version}</message>
+					<path>${project.artifactId}</path>
+					<merge>true</merge>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

@@ -30,13 +30,11 @@ public class ModelAndViewWriter implements MessageBodyWriter<ModelAndView> {
 	
 	public long getSize(ModelAndView arg0, Class<?> arg1, Type arg2,
 			Annotation[] arg3, MediaType arg4) {
-		// TODO Auto-generated method stub
 		return -1;
 	}
 
 	public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations,
 			MediaType mediaType) {
-		// TODO Auto-generated method stub
 		return type == ModelAndView.class;
 	}
 

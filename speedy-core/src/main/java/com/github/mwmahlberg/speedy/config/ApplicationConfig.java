@@ -12,18 +12,20 @@ import com.google.inject.Module;
 import com.google.inject.servlet.GuiceServletContextListener;
 
 public class ApplicationConfig extends GuiceServletContextListener {
-	
-	
+
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	private ArrayList<Module> modules;
-	
-	public ApplicationConfig(String basePackage,Module...modules) {
-				
-		this.modules = new ArrayList<Module>(Arrays.asList(modules));
+
+	public ApplicationConfig(String basePackage, Module... modules) {
+
+		this.modules = new ArrayList<Module>();
+		if (modules.length > 0) {
+			this.modules.addAll(Arrays.asList(modules));
+		}
 		this.modules.add(new SpeedyConfig(basePackage));
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		Module[] mods = new Module[modules.size()];
