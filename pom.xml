@@ -9,7 +9,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mwmahlberg.speedy</groupId>
 	<artifactId>Speedy</artifactId>
-	<version>0.1.1</version>
+	<version>0.1.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Speedy Web Application Framework</name>
 	<description>The Speedy Web Application Framework (SWAF) is aimed to be small, easy to deploy and (more buzzwords here)</description>
