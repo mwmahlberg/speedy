@@ -15,7 +15,7 @@
 
 	<name>speedy-archetype</name>
 	<description>Archetype for creating Web Applications with the Speedy Web Application Framework</description>
-
+	<url>http://mwmahlberg.github.io/speedy/${project.artifactId}</url>
 
 	<build>
 		<extensions>
@@ -34,6 +34,21 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+
+			<plugins>
+				<plugin>
+					<groupId>com.github.github</groupId>
+					<artifactId>site-maven-plugin</artifactId>
+					<version>0.10</version>
+					<configuration>
+						<server>github-pages-site</server>
+						<message>Adding new site fo ${project.artifactId} -
+							${project.version}</message>
+						<path>${project.artifactId}</path>
+						<merge>true</merge>
+					</configuration>
+				</plugin>
+			</plugins>
 	</build>
 
 </project>

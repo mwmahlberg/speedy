@@ -9,6 +9,7 @@
 		<version>0.1.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
+	<url>http://mwmahlberg.github.io/speedy/${project.artifactId}</url>
 
 	<dependencies>
 		<dependency>
@@ -39,4 +40,20 @@
 	</dependencies>
 	<name>speedy-template-thymeleaf</name>
 	<description>Thymleaf integration into the Speedy Web Application Framework</description>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.10</version>
+				<configuration>
+					<server>github-pages-site</server>
+					<message>Adding new site fo ${project.artifactId} -
+						${project.version}</message>
+					<path>${project.artifactId}</path>
+					<merge>true</merge>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

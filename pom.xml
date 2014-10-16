@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mwmahlberg.speedy</groupId>
 	<artifactId>Speedy</artifactId>
@@ -15,7 +15,7 @@
 	<name>Speedy Web Application Framework</name>
 	<description>The Speedy Web Application Framework (SWAF) is aimed to be small, easy to deploy and (more buzzwords here)</description>
 	<inceptionYear>2014</inceptionYear>
-	
+
 	<developers>
 		<developer>
 			<id>mwmahlberg</id>
@@ -37,22 +37,17 @@
 			<comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
-	
+
 	<scm>
+
 		<url>https://github.com/mwmahlberg/speedy</url>
 		<connection>scm:git:https://github.com/mwmahlberg/speedy.git</connection>
 		<developerConnection>scm:git:git@github.com:mwmahlberg/speedy.git</developerConnection>
 	</scm>
-	
-	<distributionManagement>
-		<site>
-			<id>github-pages-site</id>
-			<name>Project page on github.io</name>
-			<url>/tmp/site/${project.version}</url>
-		</site>
-	</distributionManagement>
 
-	<url>https://github.com/mwmahlberg/speedy</url>
+
+
+	<url>http://mwmahlberg.github.io/speedy</url>
 	<ciManagement>
 		<url>https://travis-ci.org/mwmahlberg/speedy</url>
 	</ciManagement>
@@ -63,55 +58,62 @@
 
 	<reporting>
 		<plugins>
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-project-info-reports-plugin</artifactId> -->
-<!-- 				<version>2.7</version> -->
-<!-- 			</plugin> -->
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-javadoc-plugin</artifactId> -->
-<!-- 				<version>2.9</version> -->
-<!-- 				<reportSets> -->
-<!-- 					<reportSet>by default, id = "default" -->
-<!-- 						<reports>select non-aggregate reports -->
-<!-- 							<report>javadoc</report> -->
-<!-- 							<report>test-javadoc</report> -->
-<!-- 						</reports> -->
-<!-- 					</reportSet> -->
-<!-- 					<reportSet>aggregate reportSet, to define in poms having modules -->
-<!-- 						<id>aggregate</id> -->
-<!-- 						<inherited>false</inherited>don't run aggregate in child modules -->
-<!-- 						<reports> -->
-<!-- 							<report>aggregate</report> -->
-<!-- 						</reports> -->
-<!-- 					</reportSet> -->
-<!-- 				</reportSets> -->
-<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-project-info-reports-plugin</artifactId> -->
+			<!-- <version>2.7</version> -->
+			<!-- </plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-javadoc-plugin</artifactId> -->
+			<!-- <version>2.9</version> -->
+			<!-- <reportSets> -->
+			<!-- <reportSet>by default, id = "default" -->
+			<!-- <reports>select non-aggregate reports -->
+			<!-- <report>javadoc</report> -->
+			<!-- <report>test-javadoc</report> -->
+			<!-- </reports> -->
+			<!-- </reportSet> -->
+			<!-- <reportSet>aggregate reportSet, to define in poms having modules -->
+			<!-- <id>aggregate</id> -->
+			<!-- <inherited>false</inherited>don't run aggregate in child modules -->
+			<!-- <reports> -->
+			<!-- <report>aggregate</report> -->
+			<!-- </reports> -->
+			<!-- </reportSet> -->
+			<!-- </reportSets> -->
+			<!-- </plugin> -->
 
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-jxr-plugin</artifactId> -->
-<!-- 				<version>2.4</version> -->
-<!-- 				<configuration> -->
-<!-- 					<linkJavadoc>true</linkJavadoc> -->
-<!-- 				</configuration> -->
-<!-- 				<reportSets> -->
-<!-- 					<reportSet> -->
-<!-- 						<id>aggregate</id> -->
-<!-- 						<reports> -->
-<!-- 							<report>aggregate</report> -->
-<!-- 							<report>test-aggregate</report> -->
-<!-- 						</reports> -->
-<!-- 					</reportSet> -->
-<!-- 				</reportSets> -->
-<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-jxr-plugin</artifactId> -->
+			<!-- <version>2.4</version> -->
+			<!-- <configuration> -->
+			<!-- <linkJavadoc>true</linkJavadoc> -->
+			<!-- </configuration> -->
+			<!-- <reportSets> -->
+			<!-- <reportSet> -->
+			<!-- <id>aggregate</id> -->
+			<!-- <reports> -->
+			<!-- <report>aggregate</report> -->
+			<!-- <report>test-aggregate</report> -->
+			<!-- </reports> -->
+			<!-- </reportSet> -->
+			<!-- </reportSets> -->
+			<!-- </plugin> -->
 		</plugins>
 	</reporting>
 
-	
 
-	
+	<distributionManagement>
+		<site>
+			<id>github-pages-site</id>
+			<name>Project page on github.io</name>
+			<url>http://mwmahlberg.github.io/speedy</url>
+		</site>
+	</distributionManagement>
+
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -123,10 +125,20 @@
 		<module>speedy-api</module>
 		<module>speedy-core</module>
 		<module>speedy-template-thymeleaf</module>
-   	<module>speedy-archetype</module>
+		<module>speedy-archetype</module>
 	</modules>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -152,12 +164,14 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.2</version>
+				<version>3.4</version>
 				<configuration>
-					<generateProjectInfo>false</generateProjectInfo>
-					<generateReports>false</generateReports>
+					<generateProjectInfo>true</generateProjectInfo>
+					<generateReports>true</generateReports>
+					<!-- <skipDeploy>true</skipDeploy> -->
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -165,13 +179,12 @@
 						<artifactId>reflow-velocity-tools</artifactId>
 						<version>1.1.1</version>
 					</dependency>
-<!-- 					Reflow skin requires Velocity >= 1.7 -->
+					<!-- Reflow skin requires Velocity >= 1.7 -->
 					<dependency>
 						<groupId>org.apache.velocity</groupId>
 						<artifactId>velocity</artifactId>
 						<version>1.7</version>
 					</dependency>
-
 				</dependencies>
 			</plugin>
 			<plugin>
@@ -181,6 +194,27 @@
 				<configuration>
 					<!-- see goals wiki page for configuration options -->
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.10</version>
+				<configuration>
+					<server>github-pages-site</server>
+					<message>Adding new site fo ${project.artifactId} -
+						${project.version}</message>
+					<merge>true</merge>
+				</configuration>
+				<executions>
+					<execution>
+						<id>publish-ghpages</id>
+						<phase>site</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
