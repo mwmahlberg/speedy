@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.mwmahlberg.speedy</groupId>
 		<artifactId>Speedy</artifactId>
-		<version>0.1.1-SNAPSHOT</version>
+		<version>0.1.1</version>
 		<relativePath>../</relativePath>
 	</parent>
 
@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>com.github.mwmahlberg.speedy</groupId>
 			<artifactId>speedy-template-thymeleaf</artifactId>
-			<version>0.1.1-SNAPSHOT</version>
+			<version>0.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.module</groupId>
