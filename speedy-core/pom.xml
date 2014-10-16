@@ -9,12 +9,8 @@
 		<version>0.1.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
-
+	
 	<dependencies>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-servlet</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>com.google.inject.extensions</groupId>
 			<artifactId>guice-servlet</artifactId>
@@ -76,13 +72,16 @@
 			<version>1.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
 			<version>1.7.7</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>9.3.0.M0</version>
+		</dependency>
 	</dependencies>
+	<name>Speedy Core</name>
+	<description>The Core of the Speedy Web Application Framework.</description>
 </project>

@@ -8,5 +8,6 @@
 		<version>0.1.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
-
+	<name>Speedy API</name>
+	<description>Shared API parts of the Speedy Web Application Framework</description>
 </project>
