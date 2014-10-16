@@ -6,7 +6,7 @@
 Create the project by calling
 
     mvn archetype:generate -DarchetypeGroupId=com.github.mwmahlberg.speedy \ 
-    -DarchetypeArtifactId=speedy-archetype -DarchetypeVersion=0.1.1-SNAPSHOT \ 
+    -DarchetypeArtifactId=speedy-archetype -DarchetypeVersion=0.1.1 \ 
     -DgroupId=org.example.webapp -DartifactId=ExampleApp -Dversion=0.0.1-SNAPSHOT \ 
     -DinteractiveMode=false
 

@@ -19,8 +19,7 @@ Running the webapp is aimed to be as easy as possible, too:
 
 will start your web application on port 9090 and binding it to the IP address 192.168.0.1.
 
-Documentation is not existing yet, as for now it is just to be used internally. It is on the TODO list for release 0.1.1.
-So if you want to use Speedy, you have either to read the source code (Hint: SpeedyApplication.java) or get into touch with me. ;)
+Please see http://mwmahlberg.github.io/speedy for details.
 
 Please note that while there are release packages available via maven central, this project is still highly experimental and by no means fit for productions use.
 
