@@ -59,15 +59,15 @@ public class SpeedyApplication {
 			/*
 			 * Set up jetty and it's connectors
 			 */
+			
 			jetty = new Server();
 			ServerConnector connector = new ServerConnector(jetty);
-
 			connector.setHost(line.getOptionValue("host", "0.0.0.0"));
 			connector.setPort(Integer.parseInt(line.getOptionValue("port",
 					"8080")));
 
 			connector.setName(basePackage);
-
+			jetty.setStopAtShutdown(true);
 			jetty.setConnectors(new Connector[] { connector });
 
 			ServletContextHandler context = new ServletContextHandler();
