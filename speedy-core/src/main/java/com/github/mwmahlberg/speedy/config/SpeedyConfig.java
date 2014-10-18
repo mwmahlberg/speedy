@@ -17,6 +17,7 @@ import com.github.mwmahlberg.speedy.ModelAndView;
 import com.github.mwmahlberg.speedy.Service;
 import com.github.mwmahlberg.speedy.aspects.RequestResponse;
 import com.github.mwmahlberg.speedy.handler.ModelAndViewWriter;
+import com.github.mwmahlberg.speedy.handler.NotFoundExceptionHandler;
 import com.github.mwmahlberg.speedy.provider.JacksonJaxbJsonProviderProvider;
 import com.github.mwmahlberg.speedy.provider.ObjectMapperProvider;
 import com.google.inject.Scopes;
@@ -75,9 +76,10 @@ public class SpeedyConfig extends JerseyServletModule {
 				Matchers.returns(Matchers.subclassesOf(ModelAndView.class)),
 				rr);
 		
+		bind(NotFoundExceptionHandler.class);
+		
         Map<String, String> params = new HashMap<String, String>();
         params.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
-		
 		serve("/*").with(GuiceContainer.class,params);
 	}
 
