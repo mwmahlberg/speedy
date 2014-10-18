@@ -44,7 +44,7 @@ public class ModelAndViewWriter implements MessageBodyWriter<ModelAndView> {
 			throws IOException, WebApplicationException {
 			Writer osWriter = new OutputStreamWriter(os);
 		    osWriter.write('\uFEFF');
-			osWriter.write(templateEngine.render(modelAndView));
+			templateEngine.render(modelAndView,osWriter);
 			osWriter.flush();
 			osWriter.close();
 	}
