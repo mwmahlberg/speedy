@@ -30,15 +30,11 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
-import com.github.mwmahlberg.speedy.ModelAndView;
 import com.github.mwmahlberg.speedy.Service;
-import com.github.mwmahlberg.speedy.aspects.RequestResponse;
-import com.github.mwmahlberg.speedy.handler.ModelAndViewWriter;
 import com.github.mwmahlberg.speedy.handler.NotFoundExceptionHandler;
 import com.github.mwmahlberg.speedy.provider.JacksonJaxbJsonProviderProvider;
 import com.github.mwmahlberg.speedy.provider.ObjectMapperProvider;
 import com.google.inject.Scopes;
-import com.google.inject.matcher.Matchers;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
@@ -64,7 +60,6 @@ public class SpeedyConfig extends JerseyServletModule {
 		
 		bind(ObjectMapper.class).toProvider(ObjectMapperProvider.class).in(Scopes.SINGLETON);
 		bind(JacksonJaxbJsonProvider.class).toProvider(JacksonJaxbJsonProviderProvider.class).in(Scopes.SINGLETON);
-		bind(ModelAndViewWriter.class).in(Scopes.SINGLETON);
 		
 		bind(GuiceContainer.class);
 		
@@ -83,15 +78,6 @@ public class SpeedyConfig extends JerseyServletModule {
 		for (Class<?> component : components) {
 			bind(component);
 		}
-		
-		RequestResponse rr = new RequestResponse();
-		
-		requestInjection(rr);
-		
-		bindInterceptor(
-				Matchers.inSubpackage(basePackage),
-				Matchers.returns(Matchers.subclassesOf(ModelAndView.class)),
-				rr);
 		
 		bind(NotFoundExceptionHandler.class);
 		

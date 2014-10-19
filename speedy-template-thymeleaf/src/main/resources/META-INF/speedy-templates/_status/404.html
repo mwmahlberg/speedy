@@ -11,14 +11,14 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <div class="page-header"><h1>Whoops! <small th:text="#{wrong}">Something went wrong!</small></h1></div>
-	          <p class="lead" th:inline="text">[[ #{lead.thePath} ]] <span class="text-warning.">[[${request.pathInfo}]]</span>[[#{lead.notFoundOn(${request.serverName})}]]</p>
+	          <p class="lead" th:inline="text">[[ #{lead.thePath} ]] <span class="text-warning">[[${#httpServletRequest.pathInfo}]]</span> [[#{lead.notFoundOn(${#httpServletRequest.serverName})}]]</p>
             <p class="text-muted" th:text="#{whatYouCanDo}">Here is what you can do:</p>
             <ol>
               <li th:text="#{advice.checkUrl}">Check the URL if you entered it manually.</li>
               <li th:text="#{advice.checkBookmark}">In case you opened a bookmark, you might need to update it.</li>
-              <li th:unless="${request.pathInfo}=='/'"><a href="#" th:href="@{/}" th:text="#{advice.homepage(${request.serverName})}">Visit the home page of www.example.com</a></li>
+              <li th:unless="${#httpServletRequest.pathInfo}=='/'"><a href="#" th:href="@{/}" th:text="#{advice.homepage(${#httpServletRequest.serverName})}">Visit the home page of www.example.com</a></li>
               <!--/*
-              <li th:if="${foo?.bar}"><a href="mailto:testuser@example.com?subject='404 for http://www.example.com/foo/example'" th:href="|mailto:${appConfig.contact.email}|?subject='404 for ${request.scheme}://${request.serverName}:${request.port}${request.pathInfo}'" th:text="#{advice.contact(${appConfig.contact.email})}">Contact testuser@example.com</a></li>
+              <li th:if="${foo?.bar}"><a href="mailto:testuser@example.com?subject='404 for http://www.example.com/foo/example'" th:href="|mailto:${appConfig.contact.email}|?subject='404 for ${#httpServletRequest.scheme}://${#httpServletRequest.serverName}:${#httpServletRequest.port}${#httpServletRequest.pathInfo}'" th:text="#{advice.contact(${appConfig.contact.email})}">Contact testuser@example.com</a></li>
               <li th:unless="${appConfig.contact.email}">You have run out of options :(</li>
                 */-->
             </ol>

@@ -36,6 +36,11 @@
 			<artifactId>speedy-api</artifactId>
 			<version>0.1.2-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.18.1</version>
+		</dependency>
 	</dependencies>
 	<name>speedy-template-thymeleaf</name>
 	<description>Thymleaf integration into the Speedy Web Application Framework</description>
