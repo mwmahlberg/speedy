@@ -20,7 +20,7 @@ package com.github.mwmahlberg.speedy.template;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
@@ -36,44 +36,61 @@ import com.sun.jersey.api.view.Viewable;
 import com.sun.jersey.spi.template.ViewProcessor;
 
 @Provider
-public class ThymeleafViewProcessor implements ViewProcessor<String>{
+public class ThymeleafViewProcessor implements ViewProcessor<String> {
 
 	@Context
 	ServletContext servletContext;
-	
+
 	@Context
 	HttpServletRequest request;
-	
+
 	@Context
 	HttpServletResponse response;
-	
+
 	@Inject
 	TemplateEngine thymeleaf;
-	
+
 	@Override
 	public String resolve(String name) {
 		return name;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void writeTo(String t, Viewable viewable, OutputStream out)
 			throws IOException {
-		
+
 		// Send the headers
 		out.flush();
-		
-		WebContext ctx = new WebContext(request, response, servletContext,request.getLocale());
-		
+
+		WebContext ctx = new WebContext(request, response, servletContext,
+				request.getLocale());
+
 		// Thymeleaf wants a ready made writer for writing to out
 		OutputStreamWriter outStreamWriter = new OutputStreamWriter(out);
-		ctx.setVariables((HashMap<String, Object>)viewable.getModel());
-		thymeleaf.process(viewable.getTemplateName(), ctx, outStreamWriter);
+
+		Object rawModel = viewable.getModel();
+
+		if (rawModel instanceof Map<?, ?>) {
+			// resource methods may return a HashMap
+			ctx.setVariables((Map<String, Object>) viewable.getModel());
+		} else if (rawModel instanceof Exception) {
+			// The exceptionHandlers may return just the exception
+			ctx.setVariable("exception", (Exception) rawModel);
+		} else {
+			ctx.setVariable("var", rawModel);
+		}
 		
-		// Thymeleaf does not flush the writer ot the underlying output stream
+		/* We need to use viewable.getTemplateName()
+		 * as Jersey prepends the whole path to the class
+		 * to the template name returned by the resource method
+		 */
+		thymeleaf.process(viewable.getTemplateName(), ctx, outStreamWriter);
+
+		// Thymeleaf does not flush the writer or the underlying output stream
 		outStreamWriter.flush();
 		outStreamWriter.close();
-//		out.flush();
-//		out.close();
+
 	}
 
 }
