@@ -31,10 +31,13 @@ import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.github.mwmahlberg.speedy.Service;
+import com.github.mwmahlberg.speedy.handler.DefaultWebApplicationExceptionHandler;
 import com.github.mwmahlberg.speedy.handler.NotFoundExceptionHandler;
+import com.github.mwmahlberg.speedy.handler.ParamExceptionHandler;
 import com.github.mwmahlberg.speedy.provider.JacksonJaxbJsonProviderProvider;
 import com.github.mwmahlberg.speedy.provider.ObjectMapperProvider;
 import com.google.inject.Scopes;
+import com.sun.jersey.api.container.ContainerException;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
@@ -80,6 +83,8 @@ public class SpeedyConfig extends JerseyServletModule {
 		}
 		
 		bind(NotFoundExceptionHandler.class);
+		bind(DefaultWebApplicationExceptionHandler.class);
+		bind(ParamExceptionHandler.class);
 		
         Map<String, String> params = new HashMap<String, String>();
         params.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
