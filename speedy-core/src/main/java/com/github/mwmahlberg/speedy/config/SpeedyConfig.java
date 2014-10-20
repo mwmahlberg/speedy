@@ -37,7 +37,7 @@ import com.github.mwmahlberg.speedy.handler.ParamExceptionHandler;
 import com.github.mwmahlberg.speedy.provider.JacksonJaxbJsonProviderProvider;
 import com.github.mwmahlberg.speedy.provider.ObjectMapperProvider;
 import com.google.inject.Scopes;
-import com.sun.jersey.api.container.ContainerException;
+import com.google.inject.name.Names;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
@@ -60,6 +60,8 @@ public class SpeedyConfig extends JerseyServletModule {
 
 	@Override
 	protected void configureServlets() {
+		
+		bind(String.class).annotatedWith(Names.named("basePackage")).toInstance(basePackage);
 		
 		bind(ObjectMapper.class).toProvider(ObjectMapperProvider.class).in(Scopes.SINGLETON);
 		bind(JacksonJaxbJsonProvider.class).toProvider(JacksonJaxbJsonProviderProvider.class).in(Scopes.SINGLETON);
