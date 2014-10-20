@@ -62,7 +62,6 @@ public class ThymeleafViewProcessor implements ViewProcessor<String> {
 
 		// Send the headers
 		out.flush();
-
 		WebContext ctx = new WebContext(request, response, servletContext,
 				request.getLocale());
 

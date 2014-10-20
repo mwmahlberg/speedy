@@ -19,6 +19,7 @@ package com.github.mwmahlberg.speedy.handler;
 
 import javax.inject.Singleton;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
@@ -32,7 +33,7 @@ public class NotFoundExceptionHandler implements
 
 	@Override
 	public Response toResponse(NotFoundException exception) {		
-		return Response.status(404).entity(new Viewable("_status/404", exception)).build();
+		return Response.status(Status.NOT_FOUND).entity(new Viewable("_status/NotFound", exception)).build();
 	}
 
 }

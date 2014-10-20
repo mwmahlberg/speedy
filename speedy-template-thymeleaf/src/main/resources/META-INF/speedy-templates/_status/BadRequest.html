@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" th:href="|//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css|" rel="stylesheet"/>
+<title th:text="#{title}">Insert title here</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="page-header"><h1>Whoops! <small th:text="#{wrong}">Something went wrong!</small></h1></div>
+            <p class="lead" th:text="#{error.message(${#httpServletRequest.pathInfo})}">An error occured because of a malformed request while calling /foo/throw/badRequest</p>
+            <h2>Cause</h2>
+            <p th:text="#{error.details(${exception.message},${exception.parameterName},${exception.parameterType})}"></p>
+            <h2>StackTrace</h2>
+            <p>
+            	<span th:each="trace: ${exception.stackTrace}" th:text="${trace}" th:remove="tag"></span><br/>
+            </p>
+            <footer>
+          		<hr />
+          		<p class="text-muted">Speedy &mdash; ${project.version}</p>
+          	</footer>
+          </div>
+     	</div>
+     </div>
+</body>
+</html>
