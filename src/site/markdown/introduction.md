@@ -326,7 +326,7 @@ Open the template file in a browser. It doesn't look nice, but it's perfectly va
 
 Until now, we only returned some object and it was automatically rendered to something meaningful. Now, we add the design element. And to let Speedy know which design we want to have applied to our data, we have to tell Speedy which template to use additionally to the data we want to have presented to the client.
 
-This can be done using a simple return value which is called `ModelAndView`. The constructor takes two arguments: The data you want to have presented and the template you want to use for that.
+This can be done using a simple return value which is called [`Viewable`][viewableapi]. The constructor takes two arguments: A template name and the data you want to apply on that template.
 
 So let's write our method:
 
@@ -339,20 +339,21 @@ So let's write our method:
     import javax.ws.rs.Path;
     import javax.ws.rs.Produces;
     import javax.ws.rs.core.MediaType;
+    import javax.ws.rs.core.Response;
 
     import org.example.webapp.Greeting;
 
-    import com.github.mwmahlberg.speedy.ModelAndView;
+    import com.sun.jersey.api.view.Viewable;
 
     @Path("/intro")
     public class Intro {
-  
+      
       @GET
       @Path("/plain")
       public String plain(){
         return "My First Controller!";
       }
-
+      
       @GET
       @Path("/json")
       @Produces("application/json")
@@ -361,7 +362,7 @@ So let's write our method:
         map.put("greeting", "Hello, Json!");
         return map;
       }
-
+      
       @GET
       @Path("/complex")
       @Produces({"application/json","application/xml"})
@@ -379,14 +380,15 @@ So let's write our method:
 	  
     	  return greet;
       }
-  
+      
       @GET
-      @Path("/html")
-      public ModelAndView html() {
+      @Path("/viewable")
+      @Produces(MediaType.TEXT_HTML)
+      public Viewable viewable() {
 	  
     	  Greeting greet = new Greeting();
 	  
-    	  greet.setMessage("Hello, HTML world!");
+    	  greet.setMessage("Hello, viewable World!");
 	  
     	  HashMap<String, String> sender = new HashMap<String, String>();
     	  sender.put("name", this.getClass().getName());
@@ -396,11 +398,12 @@ So let's write our method:
 	  
     	  model.put("greeting", greet);
 	  
-    	  return new ModelAndView(model, "FirstTemplate");
+    	  return new Viewable("FirstTemplate", model);
       }
+      
     }
     
-Compile the project as usual, run it and open http://localhost:8080/intro/html and you will see the rendered HTML page!
+Compile the project as usual, run it and open http://localhost:8080/intro/viewable and you will see the rendered HTML page!
 
 Things to note here:
 
@@ -408,10 +411,25 @@ Things to note here:
  * You can create subdirectories under `META-INF/templates`. The template would then be adressed as `<subdir>/<templateName>`
  * As of now, there is no possibility to have the same path return all three content types. It is either HTML or JSON and/or XML.
    This _may_ change in future versions.
+ * Viewable can take any `Object` as an argument. It will simply pass it to the template engine as is.
 
-This ends the introduction into Speedy. More documentation is about to come, so please stay tuned!
+### More granular control over the response
 
+So far, we worked with annotations and implicit assumptions to create our response. In the last part of the introduction, it is shown how to take more control over what is returned to the client.
 
+We use the [`ResponseBuilder`][responsebuilder] for this:
+
+    @GET
+    @Path("/response")
+    public Response html() {
+
+      return Response.status(203).entity(this.viewable()).type("text/html").build();
+      
+    }
+
+The ResponseBuilder allows us to create our response dynamically. Note that entity can take every argument Speedy is able to serialize, for example a `Greeting` object from this example.
+
+This ends the short introduction. Please [file a ticket][issues] if you would like to see parts of the documentation expanded. Since time is a limited resource, please be specific. Let's call it an agile approach to documentation. ;)
 
 [quick]: quickstart.html
 [pojo]: http://en.wikipedia.org/wiki/Plain_Old_Java_Object
@@ -423,3 +441,6 @@ This ends the introduction into Speedy. More documentation is about to come, so 
 [thymeleaf]: http://www.thymeleaf.org
 [wikicurl]: http://en.wikipedia.org/wiki/CURL
 [wikiwget]: http://en.wikipedia.org/wiki/Wget
+[viewableapi]: https://jersey.java.net/apidocs/1.18/jersey/com/sun/jersey/api/view/Viewable.html
+[responsebuilder]: https://jersey.java.net/apidocs/1.18/jersey/javax/ws/rs/core/Response.html
+[issues]: https://github.com/mwmahlberg/speedy/issues
