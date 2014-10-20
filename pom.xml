@@ -121,7 +121,7 @@
 	</properties>
 
 	<modules>
-		<module>speedy-api</module>
+		
 		<module>speedy-core</module>
 		<module>speedy-template-thymeleaf</module>
 		<module>speedy-archetype</module>
