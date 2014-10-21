@@ -81,6 +81,15 @@
 			<artifactId>jetty-servlet</artifactId>
 			<version>9.3.0.M0</version>
 		</dependency>
+		
+		<!-- necessary for reflections to use collect() to process compile time reflections -->
+		<!-- DO NOT REMOVE -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		
 	</dependencies>
 	<name>Speedy Core</name>
 	<description>The Core of the Speedy Web Application Framework.</description>
