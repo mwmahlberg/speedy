@@ -52,6 +52,9 @@ public class SpeedyConfig extends JerseyServletModule {
 		if(basePackage == null) {
 			throw new IllegalArgumentException("basePackage must not be null");
 		}
+		else if(basePackage.length < 1) {
+			throw new IllegalArgumentException("basePackage name must contains at least one caracter");
+		}
 		
 		this.basePackage = basePackage;
 	}
