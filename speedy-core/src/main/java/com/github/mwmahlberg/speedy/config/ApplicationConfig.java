@@ -19,6 +19,7 @@ package com.github.mwmahlberg.speedy.config;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,14 +35,21 @@ public class ApplicationConfig extends GuiceServletContextListener {
 
 	private ArrayList<Module> modules;
 
-	public ApplicationConfig(String basePackage, Module... modules) {
+
+	
+	 public ApplicationConfig(String basePackage,Properties properties,Module... modules) {
 
 		this.modules = new ArrayList<Module>();
 		if (modules.length > 0) {
 			this.modules.addAll(Arrays.asList(modules));
 		}
-		this.modules.add(new SpeedyConfig(basePackage));
+		this.modules.add(new SpeedyConfig(basePackage,properties));
+		
 	}
+	 
+		public ApplicationConfig(String basePackage, Module... modules) {
+			this(basePackage,new Properties(),modules);
+		}
 
 	@Override
 	protected Injector getInjector() {

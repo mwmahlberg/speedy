@@ -20,7 +20,9 @@ package com.github.mwmahlberg.speedy.config;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import javax.ws.rs.Path;
 
@@ -42,55 +44,70 @@ import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
 public class SpeedyConfig extends JerseyServletModule {
-	
+
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	
+
 	String basePackage;
-	
-	public SpeedyConfig(String basePackage) {
-		
-		if(basePackage == null) {
+
+	Properties fileConfig;
+
+	final static Pattern CONFIGS = Pattern.compile("speedy-.*\\.properties");
+
+	public SpeedyConfig(String basePackage, Properties properties) {
+
+		if (basePackage == null) {
 			throw new IllegalArgumentException("basePackage must not be null");
 		}
-		
+
 		this.basePackage = basePackage;
+		this.fileConfig = properties;
 	}
-
-
 
 	@Override
 	protected void configureServlets() {
+
+		Reflections reflection = Reflections.collect();
+
+		/* Bind configuration parameters from various config locations
+		 * to @Named
+		 */
+		Names.bindProperties(binder(), ConfigHelper.getProperties(
+				reflection.getResources(CONFIGS), fileConfig));
+
+		bind(String.class).annotatedWith(Names.named("basePackage"))
+				.toInstance(basePackage);
+
+		bind(ObjectMapper.class).toProvider(ObjectMapperProvider.class).in(
+				Scopes.SINGLETON);
 		
-		bind(String.class).annotatedWith(Names.named("basePackage")).toInstance(basePackage);
-		
-		bind(ObjectMapper.class).toProvider(ObjectMapperProvider.class).in(Scopes.SINGLETON);
-		bind(JacksonJaxbJsonProvider.class).toProvider(JacksonJaxbJsonProviderProvider.class).in(Scopes.SINGLETON);
-		
+		bind(JacksonJaxbJsonProvider.class).toProvider(
+				JacksonJaxbJsonProviderProvider.class).in(Scopes.SINGLETON);
+
 		bind(GuiceContainer.class);
-		
-		Reflections reflection = new Reflections(basePackage);
-		
+
 		Set<Class<?>> components = new HashSet<Class<?>>();
-		
-		Set<Class<?>> controllers = reflection.getTypesAnnotatedWith(Path.class);
-		logger.info("Found {} controllers",controllers.size());
+
+		Set<Class<?>> controllers = reflection
+				.getTypesAnnotatedWith(Path.class);
+		logger.info("Found {} controllers", controllers.size());
 		components.addAll(controllers);
-		
-		Set<Class<?>> services = reflection.getTypesAnnotatedWith(Service.class);
-		logger.info("Found {} service",services.size());
+
+		Set<Class<?>> services = reflection
+				.getTypesAnnotatedWith(Service.class);
+		logger.info("Found {} services", services.size());
 		components.addAll(services);
 
 		for (Class<?> component : components) {
 			bind(component);
 		}
-		
+
 		bind(NotFoundExceptionHandler.class);
 		bind(DefaultWebApplicationExceptionHandler.class);
 		bind(ParamExceptionHandler.class);
-		
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
-		serve("/*").with(GuiceContainer.class,params);
+
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
+		serve("/*").with(GuiceContainer.class, params);
 	}
 
 }

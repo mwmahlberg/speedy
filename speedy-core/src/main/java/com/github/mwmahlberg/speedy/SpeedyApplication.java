@@ -17,7 +17,10 @@
 
 package com.github.mwmahlberg.speedy;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.EnumSet;
+import java.util.Properties;
 import java.util.logging.LogManager;
 
 import javax.servlet.DispatcherType;
@@ -32,6 +35,8 @@ import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
 import com.github.mwmahlberg.speedy.config.ApplicationConfig;
@@ -43,6 +48,8 @@ public class SpeedyApplication {
 	private Server jetty;
 
 	private final String basePackage;
+	
+	Logger logger = LoggerFactory.getLogger(getClass());
 
 	public SpeedyApplication(String basePackage) {
 		this.basePackage = basePackage;
@@ -55,6 +62,7 @@ public class SpeedyApplication {
 				"IP address the server should bind to.\nDefaults to \"0.0.0.0\" for all IPs");
 		options.addOption("p", "port", true,
 				"port the server should bind to.\nDefaults to 8080");
+		options.addOption("f","file",true,"path to optional configuration file");
 		options.addOption(null, "help", false, "prints this message");
 
 		CommandLineParser parser = new BasicParser();
@@ -98,7 +106,20 @@ public class SpeedyApplication {
 			/*
 			 * Configure the application Jersey is added via binding
 			 */
-			context.addEventListener(new ApplicationConfig(basePackage, modules));
+			Properties appConfig = new Properties();
+			if(line.hasOption("file")) {
+		        try {
+		        	
+					appConfig.load(new FileReader(line.getOptionValue("file")));
+					logger.info("Loaded configuration file {}",line.getOptionValue("file"));
+				} catch (IOException e) {
+					logger.error("Could not read configuration at {}",line.getOptionValue("file"));
+					e.printStackTrace();
+					System.exit(3);
+				}
+
+			}
+			context.addEventListener(new ApplicationConfig(basePackage, appConfig, modules));
 
 			jetty.setHandler(context);
 
