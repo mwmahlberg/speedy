@@ -24,10 +24,12 @@ Like every other module, the only thing you need to do is to tell Speedy to use 
 
 
     SpeedyApplication app = new SpeedyApplication("org.example.webapp");
-    app.configure(args, new AppConfig(), new MorphiaModule("10.0.0.1",27017);
+    app.configure(args, new AppConfig(), new MorphiaModule("mongodb://10.0.0.1:38123/");
     app.run();
     
-Note that the host and port values are optional. They default to "localhost" and 27017.
+The connection string `"mongodb://10.0.0.1:38123/"`is optional. When you leave it out, the client connects to localhost on port 27017 with no authentication.
+
+For the syntax of the connection string, please see the [API docs of the MongoClient class][mongoclient]. 
 
 The module will scan your application for [entities][entities], map them automatically and provide an injectable [datastore][datastore]:
 
@@ -82,3 +84,4 @@ The module will scan your application for [entities][entities], map them automat
 [mongolab]: https://mongolab.com/plans/pricing/
 [entities]: https://github.com/mongodb/morphia/wiki/EntityAnnotation
 [datastore]: https://github.com/mongodb/morphia/wiki/Datastore
+[mongoclient]: http://api.mongodb.org/java/current/com/mongodb/MongoClientURI.html
