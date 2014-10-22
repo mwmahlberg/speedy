@@ -29,6 +29,18 @@
 		</developer>
 	</developers>
 
+	<contributors>
+		<contributor>
+			<id>shakaran</id>
+			<name>Angel Guzman Maeso</name>
+			<email>shakaran@gmail.com</email>
+			<url>http://shakaran.net/</url>
+			<roles>
+				<role>First Contributor</role>
+			</roles>
+		</contributor>
+	</contributors>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
