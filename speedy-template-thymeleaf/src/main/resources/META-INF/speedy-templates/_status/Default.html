@@ -12,7 +12,10 @@
           <div class="col-md-8 col-md-offset-2">
             <div class="page-header"><h1>Whoops! <small th:text="#{wrong}">Something went wrong!</small></h1></div>
             <p class="lead" th:text="#{error.message(${#httpServletRequest.pathInfo})}">The application threw an exception processing /foo/throw/internalServerError</p>
-            <p class="code" th:text="${stackTrace}"></p>
+            <h2>StackTrace</h2>
+            <p>
+            	<span th:each="trace: ${exception.stackTrace}" th:text="${trace}" th:remove="tag"></span><br/>
+            </p>
             <footer>
           		<hr />
           		<p class="text-muted">Speedy &mdash; ${project.version}</p>
