@@ -18,12 +18,12 @@
 		<dependency>
 			<groupId>com.github.mwmahlberg.speedy</groupId>
 			<artifactId>speedy-core</artifactId>
-			<version>0.1.1-SNAPSHOT</version>
+			<version>0.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.mwmahlberg.speedy</groupId>
 			<artifactId>speedy-template-thymeleaf</artifactId>
-			<version>0.1.1-SNAPSHOT</version>
+			<version>0.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>dom4j</groupId>
@@ -53,6 +53,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.3</version>
 				<executions>
 					<execution>
 						<id>create-fat-jar</id>
