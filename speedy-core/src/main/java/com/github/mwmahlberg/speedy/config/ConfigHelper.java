@@ -1,69 +1,51 @@
 package com.github.mwmahlberg.speedy.config;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
+import org.apache.commons.configuration.CombinedConfiguration;
+import org.apache.commons.configuration.ConfigurationConverter;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration.SystemConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.common.base.Optional;
-
-import static com.google.common.base.Preconditions.*;
 
 public class ConfigHelper {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(ConfigHelper.class);
 
-	public static Properties getProperties(Set<String> props,
-			Properties fileConfig) throws IOException {
-		Properties defaults = new Properties();
+	public static Properties getProperties(Set<String> props, String configFile)
+			throws ConfigurationException {
 
-		Properties config = new Properties();
+		CombinedConfiguration cc = new CombinedConfiguration();
+
+		SystemConfiguration systemConfiguration = new SystemConfiguration();
+
+		PropertiesConfiguration configFileConfiguration = new PropertiesConfiguration();
+
+		if (configFile != null) {
+			configFileConfiguration = new PropertiesConfiguration(configFile);
+		}
+
+		/* Environment parameters have precendence */
+		cc.addConfiguration(systemConfiguration);
+
+		/* Next is the users config file */
+		cc.addConfiguration(configFileConfiguration);
 
 		if (props == null) {
-			props = new HashSet<String>();
+			return ConfigurationConverter.getProperties(cc);
 		}
 
-		if (props.size() > 0) {
-			for (String string : props) {
-				logger.info("Processing {}", string);
+		for (String string : props) {
 
-				InputStream is = ConfigHelper.class.getClassLoader().getResourceAsStream(string);
-
-				if (is == null) {
-					throw new IOException("Property file " + string
-							+ " not found or not readable");
-				} else if (string.startsWith("META-INF/_speedy")) {
-					defaults.load(is);
-					logger.info("Loaded default configuration from {}", string);
-				} else {
-					config.load(is);
-					logger.info("Loaded configuration from {}", string);
-				}
-
-			}
+			PropertiesConfiguration file = new PropertiesConfiguration(string);
+			cc.addConfiguration(file);
 		}
 
-		Properties appConfig = new Properties();
-		appConfig.putAll(defaults);
-		appConfig.putAll(config);
+		return ConfigurationConverter.getProperties(cc);
 
-		if (fileConfig != null) {
-			appConfig.putAll(fileConfig);
-		}
-
-		appConfig.putAll(System.getProperties());
-
-		logger.debug("defaults: {}", defaults);
-		logger.debug("config: {}", config);
-		logger.debug("fileConfig: {}", fileConfig);
-		logger.debug("System properties: {}", System.getProperties());
-		logger.debug("appConfig: {}", appConfig);
-		return appConfig;
 	}
-
 }

@@ -93,6 +93,11 @@
 			<version>1.7.7</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.10</version>
+		</dependency>
 	</dependencies>
 	<name>Speedy Core</name>
 	<description>The Core of the Speedy Web Application Framework.</description>

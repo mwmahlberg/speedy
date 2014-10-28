@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Properties;
 
+import org.apache.commons.configuration.ConfigurationException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -44,52 +45,35 @@ public class ConfigHelperTest {
 		files.add("META-INF/_speedy/default.properties");
 		files.add("META-INF/_speedy/moduleDefault.properties");
 	}
-
-	@Before
-	public void setUp() throws Exception {
-		propertiesFromConfigFile = new Properties();
-		propertiesFromConfigFile.load(getClass().getResourceAsStream(
-				"/test.properties"));
-
-	}
-
-	@Test
-	public final void testGetSystemPropertiesOnly() throws IOException {
-		
-		Properties returned = ConfigHelper.getProperties(null, null);
-		assertNotNull("Properties returned must not be null", returned);
-		assertEquals(returned, System.getProperties());
-		
-	}
 	
 	@Test
-	public final void testWithoutDefaults() throws IOException{
-		Properties returned = ConfigHelper.getProperties(null, propertiesFromConfigFile);
+	public final void testWithoutDefaults() throws ConfigurationException{
+		Properties returned = ConfigHelper.getProperties(null, "test.properties");
 		assertNull(returned.get("unreadable"));
 	}
 
 	@Test
-	public final void testDefaultValuesOverridden() throws IOException {
+	public final void testDefaultValuesOverridden() throws ConfigurationException {
 
 		Properties returned = ConfigHelper.getProperties(files,
-				propertiesFromConfigFile);
+				"test.properties");
 
-		assertNotEquals(returned.get("testproperty"), "speedyDefaultValue");
-		assertNotEquals(returned.get("moduleproperty"), "speedyDefaultValue");
+		assertNotEquals( "speedyDefaultValue",returned.get("testproperty"));
+		assertNotEquals("speedyDefaultValue",returned.get("moduleproperty") );
 	}
 
 	@Test
-	public final void testDefaultValues() throws IOException {
+	public final void testDefaultValues() throws ConfigurationException {
 		Properties returned = ConfigHelper.getProperties(files, null);
-		assertEquals(returned.get("testproperty"), "speedyDefaultValue");
-		assertEquals(returned.get("moduleproperty"), "speedyDefaultValue");
+		assertEquals("speedyDefaultValue",returned.get("testproperty"));
+		assertEquals( "speedyDefaultValue",returned.get("moduleproperty"));
 	}
 	
-	@Test(expected=IOException.class)
-	public final void testIllegalPath() throws IOException {
+	@Test(expected=ConfigurationException.class)
+	public final void testIllegalPath() throws ConfigurationException {
 		HashSet<String> invalidIncludedFiles = files;
 		invalidIncludedFiles.add("does/not/exist");
-		Properties returned = ConfigHelper.getProperties(invalidIncludedFiles, propertiesFromConfigFile);
+		Properties returned = ConfigHelper.getProperties(invalidIncludedFiles, "test.properties");
 		assertNotEquals(returned.get("testproperty"), "speedyDefaultValue");
 		assertNotEquals(returned.get("moduleproperty"), "speedyDefaultValue");
 		files.remove("does/not/exist");

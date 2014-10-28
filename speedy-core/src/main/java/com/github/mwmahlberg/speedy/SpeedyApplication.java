@@ -103,23 +103,7 @@ public class SpeedyApplication {
 			context.addFilter(GuiceFilter.class, "/*",
 					EnumSet.of(DispatcherType.REQUEST, DispatcherType.INCLUDE));
 
-			/*
-			 * Configure the application Jersey is added via binding
-			 */
-			Properties appConfig = new Properties();
-			if(line.hasOption("file")) {
-		        try {
-		        	
-					appConfig.load(new FileReader(line.getOptionValue("file")));
-					logger.info("Loaded configuration file {}",line.getOptionValue("file"));
-				} catch (IOException e) {
-					logger.error("Could not read configuration at {}",line.getOptionValue("file"));
-					e.printStackTrace();
-					System.exit(3);
-				}
-
-			}
-			context.addEventListener(new ApplicationConfig(basePackage, appConfig, modules));
+			context.addEventListener(new ApplicationConfig(basePackage, line.getOptionValue("f"), modules));
 
 			jetty.setHandler(context);
 

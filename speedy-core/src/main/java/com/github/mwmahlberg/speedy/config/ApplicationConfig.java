@@ -37,18 +37,18 @@ public class ApplicationConfig extends GuiceServletContextListener {
 
 
 	
-	 public ApplicationConfig(String basePackage,Properties properties,Module... modules) {
+	 public ApplicationConfig(String basePackage,String configFile,Module... modules) {
 
 		this.modules = new ArrayList<Module>();
 		if (modules.length > 0) {
 			this.modules.addAll(Arrays.asList(modules));
 		}
-		this.modules.add(new SpeedyConfig(basePackage,properties));
+		this.modules.add(new SpeedyConfig(basePackage,configFile));
 		
 	}
 	 
 		public ApplicationConfig(String basePackage, Module... modules) {
-			this(basePackage,new Properties(),modules);
+			this(basePackage,null,modules);
 		}
 
 	@Override
