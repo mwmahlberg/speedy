@@ -17,6 +17,7 @@
 
 package com.github.mwmahlberg.speedy.config;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -74,9 +75,13 @@ public class SpeedyConfig extends JerseyServletModule {
 		/* Bind configuration parameters from various config locations
 		 * to @Named
 		 */
+		try {
 		Names.bindProperties(binder(), ConfigHelper.getProperties(
 				reflection.getResources(CONFIGS), fileConfig));
-
+		} catch(IOException e) {
+			logger.error("Configuration failed", e);
+			System.exit(5);
+		}
 		bind(String.class).annotatedWith(Names.named("basePackage"))
 				.toInstance(basePackage);
 
