@@ -25,8 +25,6 @@ import com.google.inject.Provider;
 public class JacksonJaxbJsonProviderProvider implements
 		Provider<JacksonJaxbJsonProvider> {
 
-
-
 	public JacksonJaxbJsonProvider get() {
 		 JacksonJaxbJsonProvider provider = new JacksonJaxbJsonProvider(Annotations.JAXB);
 		 provider.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, Boolean.FALSE);
