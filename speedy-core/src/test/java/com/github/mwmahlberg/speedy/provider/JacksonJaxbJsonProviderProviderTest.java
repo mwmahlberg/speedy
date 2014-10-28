@@ -30,7 +30,7 @@ public class JacksonJaxbJsonProviderProviderTest {
 		 * This does not break unit testing, since we have very specific requirements
 		 * to the provider.
 		 */
-		
+
 		assertTrue(provider.isWriteable(JAXBAnnotated.class,String.class,JAXBAnnotated.class.getAnnotations() , MediaType.APPLICATION_JSON_TYPE));
 	}
 

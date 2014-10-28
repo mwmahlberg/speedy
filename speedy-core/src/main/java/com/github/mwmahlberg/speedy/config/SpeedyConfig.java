@@ -27,6 +27,8 @@ import java.util.regex.Pattern;
 
 import javax.ws.rs.Path;
 
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,11 +52,11 @@ public class SpeedyConfig extends JerseyServletModule {
 
 	String basePackage;
 
-	Properties fileConfig;
+	String configFile;
 
 	final static Pattern CONFIGS = Pattern.compile("speedy-.*\\.properties");
 
-	public SpeedyConfig(String basePackage, Properties properties) {
+	public SpeedyConfig(String basePackage, String configFile) {
 
 		if (basePackage == null) {
 			throw new IllegalArgumentException("basePackage must not be null");
@@ -63,8 +65,8 @@ public class SpeedyConfig extends JerseyServletModule {
 			throw new IllegalArgumentException("basePackage name must contain at least one caracter");
 		}
 		
-		this.basePackage = basePackage;
-		this.fileConfig = properties;
+		this.configFile = configFile;
+		
 	}
 
 	@Override
@@ -77,8 +79,8 @@ public class SpeedyConfig extends JerseyServletModule {
 		 */
 		try {
 		Names.bindProperties(binder(), ConfigHelper.getProperties(
-				reflection.getResources(CONFIGS), fileConfig));
-		} catch(IOException e) {
+				reflection.getResources(CONFIGS), configFile));
+		} catch(ConfigurationException e) {
 			logger.error("Configuration failed", e);
 			System.exit(5);
 		}
