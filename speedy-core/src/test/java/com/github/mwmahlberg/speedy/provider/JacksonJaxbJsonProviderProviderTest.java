@@ -13,14 +13,6 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 
 public class JacksonJaxbJsonProviderProviderTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
 	@Test
 	public final void testGet() {
 		JacksonJaxbJsonProvider provider = new JacksonJaxbJsonProviderProvider().get();
