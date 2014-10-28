@@ -17,22 +17,27 @@
 package com.github.mwmahlberg.speedy.config;
 
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.Properties;
 
 import org.apache.commons.configuration.ConfigurationException;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ConfigHelperTest {
+public final class ConfigHelperTest {
 
 	Properties propertiesFromConfigFile;
 
 	static HashSet<String> files = new HashSet<String>();
+
+	/* Just to shut Cobertura up*/
+	@SuppressWarnings("unused")
+	private static ConfigHelper helper;
 
 	@BeforeClass
 	public static void checkResources() {
@@ -47,7 +52,8 @@ public class ConfigHelperTest {
 	}
 	
 	@Test
-	public final void testWithoutDefaults() throws ConfigurationException{
+	public void testWithoutDefaults() throws ConfigurationException{
+		helper = new ConfigHelper();
 		Properties returned = ConfigHelper.getProperties(null, "test.properties");
 		assertNull(returned.get("unreadable"));
 	}
