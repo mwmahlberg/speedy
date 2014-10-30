@@ -17,10 +17,7 @@
 
 package com.github.mwmahlberg.speedy;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.EnumSet;
-import java.util.Properties;
 import java.util.logging.LogManager;
 
 import javax.servlet.DispatcherType;
@@ -31,6 +28,8 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.shiro.web.env.EnvironmentLoaderListener;
+import org.apache.shiro.web.servlet.ShiroFilter;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -48,7 +47,7 @@ public class SpeedyApplication {
 	private Server jetty;
 
 	private final String basePackage;
-	
+
 	Logger logger = LoggerFactory.getLogger(getClass());
 
 	public SpeedyApplication(String basePackage) {
@@ -62,7 +61,8 @@ public class SpeedyApplication {
 				"IP address the server should bind to.\nDefaults to \"0.0.0.0\" for all IPs");
 		options.addOption("p", "port", true,
 				"port the server should bind to.\nDefaults to 8080");
-		options.addOption("f","file",true,"path to optional configuration file");
+		options.addOption("f", "file", true,
+				"path to optional configuration file");
 		options.addOption(null, "help", false, "prints this message");
 
 		CommandLineParser parser = new BasicParser();
@@ -84,7 +84,7 @@ public class SpeedyApplication {
 			/*
 			 * Set up jetty and it's connectors
 			 */
-			
+
 			jetty = new Server();
 			ServerConnector connector = new ServerConnector(jetty);
 			connector.setHost(line.getOptionValue("host", "0.0.0.0"));
@@ -97,13 +97,19 @@ public class SpeedyApplication {
 
 			ServletContextHandler context = new ServletContextHandler();
 
+			context.addEventListener(new EnvironmentLoaderListener());
+			context.addEventListener(new ApplicationConfig(basePackage, line
+					.getOptionValue("f"), modules));
+
+			context.addFilter(ShiroFilter.class, "/*", EnumSet.of(
+					DispatcherType.REQUEST, DispatcherType.FORWARD,
+					DispatcherType.INCLUDE, DispatcherType.ERROR));
 			/*
 			 * Filter everything through Guice, so that @Inject's can be done
 			 */
+
 			context.addFilter(GuiceFilter.class, "/*",
 					EnumSet.of(DispatcherType.REQUEST, DispatcherType.INCLUDE));
-
-			context.addEventListener(new ApplicationConfig(basePackage, line.getOptionValue("f"), modules));
 
 			jetty.setHandler(context);
 
