@@ -57,13 +57,14 @@ public class SpeedyConfig extends JerseyServletModule {
 
 		if (basePackage == null) {
 			throw new IllegalArgumentException("basePackage must not be null");
+		} else if (basePackage.length() < 1) {
+			throw new IllegalArgumentException(
+					"basePackage name must contain at least one caracter");
 		}
-		else if(basePackage.length() < 1) {
-			throw new IllegalArgumentException("basePackage name must contain at least one caracter");
-		}
-		
+
+		this.basePackage = basePackage;
 		this.configFile = configFile;
-		
+
 	}
 
 	@Override
@@ -71,13 +72,13 @@ public class SpeedyConfig extends JerseyServletModule {
 
 		Reflections reflection = Reflections.collect();
 
-		/* Bind configuration parameters from various config locations
-		 * to @Named
+		/*
+		 * Bind configuration parameters from various config locations to @Named
 		 */
 		try {
-		Names.bindProperties(binder(), ConfigHelper.getProperties(
-				reflection.getResources(CONFIGS), configFile));
-		} catch(ConfigurationException e) {
+			Names.bindProperties(binder(), ConfigHelper.getProperties(
+					reflection.getResources(CONFIGS), configFile));
+		} catch (ConfigurationException e) {
 			logger.error("Configuration failed", e);
 			System.exit(5);
 		}
@@ -86,7 +87,7 @@ public class SpeedyConfig extends JerseyServletModule {
 
 		bind(ObjectMapper.class).toProvider(ObjectMapperProvider.class).in(
 				Scopes.SINGLETON);
-		
+
 		bind(JacksonJaxbJsonProvider.class).toProvider(
 				JacksonJaxbJsonProviderProvider.class).in(Scopes.SINGLETON);
 
@@ -111,10 +112,11 @@ public class SpeedyConfig extends JerseyServletModule {
 		bind(NotFoundExceptionHandler.class);
 		bind(DefaultWebApplicationExceptionHandler.class);
 		bind(ParamExceptionHandler.class);
-
+		
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
 		serve("/*").with(GuiceContainer.class, params);
 	}
+
 
 }
