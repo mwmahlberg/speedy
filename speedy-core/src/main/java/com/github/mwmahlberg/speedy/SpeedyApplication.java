@@ -65,6 +65,9 @@ public class SpeedyApplication {
 				"path to optional configuration file");
 		options.addOption(null, "help", false, "prints this message");
 
+		options.addOption("n", "noauth", false,
+				"disable authentication and authorization");
+
 		CommandLineParser parser = new BasicParser();
 		try {
 			CommandLine line = parser.parse(options, args, true);
@@ -97,13 +100,18 @@ public class SpeedyApplication {
 
 			ServletContextHandler context = new ServletContextHandler();
 
-			context.addEventListener(new EnvironmentLoaderListener());
+			if (!line.hasOption("noauth")) {
+				
+				context.addFilter(ShiroFilter.class, "/*", EnumSet.of(
+						DispatcherType.REQUEST, DispatcherType.FORWARD,
+						DispatcherType.INCLUDE, DispatcherType.ERROR));
+
+				context.addEventListener(new EnvironmentLoaderListener());
+
+			}
+
 			context.addEventListener(new ApplicationConfig(basePackage, line
 					.getOptionValue("f"), modules));
-
-			context.addFilter(ShiroFilter.class, "/*", EnumSet.of(
-					DispatcherType.REQUEST, DispatcherType.FORWARD,
-					DispatcherType.INCLUDE, DispatcherType.ERROR));
 			/*
 			 * Filter everything through Guice, so that @Inject's can be done
 			 */
