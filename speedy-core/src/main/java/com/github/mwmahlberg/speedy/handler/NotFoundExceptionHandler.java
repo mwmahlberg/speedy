@@ -31,7 +31,6 @@ import com.sun.jersey.api.view.Viewable;
 public class NotFoundExceptionHandler implements
 		ExceptionMapper<NotFoundException> {
 
-	@Override
 	public Response toResponse(NotFoundException exception) {		
 		return Response.status(Status.NOT_FOUND).entity(new Viewable("_status/NotFound", exception)).build();
 	}

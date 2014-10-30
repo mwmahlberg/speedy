@@ -34,7 +34,6 @@ public class DefaultWebApplicationExceptionHandler implements
 	
 	Logger logger = LoggerFactory.getLogger(getClass());
 
-	@Override
 	public Response toResponse(WebApplicationException exception) {
 		
 		logger.warn("WebApplicationException cought!", exception);

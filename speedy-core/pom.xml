@@ -98,6 +98,18 @@
 			<artifactId>commons-configuration</artifactId>
 			<version>1.10</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-guice</artifactId>
+			<version>1.2.3</version>
+		</dependency>
 	</dependencies>
 	<name>Speedy Core</name>
 	<description>The Core of the Speedy Web Application Framework.</description>
@@ -123,7 +135,7 @@
 						<ignoreMethodAnnotations>
 							<ignoreMethodAnnotation>javax.inject.Singleton</ignoreMethodAnnotation>
 						</ignoreMethodAnnotations>
-					
+
 					</instrumentation>
 				</configuration>
 			</plugin>
