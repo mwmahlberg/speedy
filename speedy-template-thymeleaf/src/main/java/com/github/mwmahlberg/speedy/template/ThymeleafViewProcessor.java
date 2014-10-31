@@ -50,13 +50,11 @@ public class ThymeleafViewProcessor implements ViewProcessor<String> {
 	@Inject
 	TemplateEngine thymeleaf;
 
-	@Override
 	public String resolve(String name) {
 		return name;
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public void writeTo(String t, Viewable viewable, OutputStream out)
 			throws IOException {
 

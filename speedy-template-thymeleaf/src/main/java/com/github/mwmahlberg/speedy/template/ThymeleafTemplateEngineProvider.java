@@ -69,7 +69,6 @@ public class ThymeleafTemplateEngineProvider implements
 		thymeleaf.setTemplateModeHandlers(handlers);
 	}
 
-	@Override
 	public TemplateEngine get() {
 		return thymeleaf;
 	}
