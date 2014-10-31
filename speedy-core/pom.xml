@@ -13,11 +13,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.google.inject.extensions</groupId>
-			<artifactId>guice-servlet</artifactId>
-			<version>4.0-beta5</version>
-		</dependency>
-		<dependency>
 			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-guice</artifactId>
 			<version>1.18.1</version>
@@ -36,11 +31,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.reflections</groupId>
-			<artifactId>reflections</artifactId>
-			<version>0.9.9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.mwmahlberg.speedy</groupId>
@@ -109,6 +99,11 @@
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-guice</artifactId>
 			<version>1.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.infomas</groupId>
+			<artifactId>annotation-detector</artifactId>
+			<version>3.0.4</version>
 		</dependency>
 	</dependencies>
 	<name>Speedy Core</name>

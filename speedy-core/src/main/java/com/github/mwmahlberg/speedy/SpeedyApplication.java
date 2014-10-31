@@ -28,8 +28,6 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-import org.apache.shiro.web.env.EnvironmentLoaderListener;
-import org.apache.shiro.web.servlet.ShiroFilter;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -95,27 +93,23 @@ public class SpeedyApplication {
 					"8080")));
 
 			connector.setName(basePackage);
+			
 			jetty.setStopAtShutdown(true);
 			jetty.setConnectors(new Connector[] { connector });
 
-			ServletContextHandler context = new ServletContextHandler();
+			ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
-			if (!line.hasOption("noauth")) {
-				
-				context.addFilter(ShiroFilter.class, "/*", EnumSet.of(
-						DispatcherType.REQUEST, DispatcherType.FORWARD,
-						DispatcherType.INCLUDE, DispatcherType.ERROR));
-
-				context.addEventListener(new EnvironmentLoaderListener());
-
+			Boolean secured = Boolean.TRUE;
+			
+			if(line.hasOption("noauth")) {
+				secured = Boolean.FALSE;
 			}
-
+			
 			context.addEventListener(new ApplicationConfig(basePackage, line
-					.getOptionValue("f"), modules));
+					.getOptionValue("f"),secured, modules));
 			/*
 			 * Filter everything through Guice, so that @Inject's can be done
 			 */
-
 			context.addFilter(GuiceFilter.class, "/*",
 					EnumSet.of(DispatcherType.REQUEST, DispatcherType.INCLUDE));
 

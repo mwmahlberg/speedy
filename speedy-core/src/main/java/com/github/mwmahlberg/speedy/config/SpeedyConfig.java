@@ -17,22 +17,20 @@
 
 package com.github.mwmahlberg.speedy.config;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Pattern;
 
-import javax.ws.rs.Path;
+import javax.servlet.ServletContext;
 
-import org.apache.commons.configuration.ConfigurationException;
-import org.reflections.Reflections;
+import org.apache.shiro.guice.web.GuiceShiroFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
-import com.github.mwmahlberg.speedy.Service;
 import com.github.mwmahlberg.speedy.handler.DefaultWebApplicationExceptionHandler;
 import com.github.mwmahlberg.speedy.handler.NotFoundExceptionHandler;
 import com.github.mwmahlberg.speedy.handler.ParamExceptionHandler;
@@ -43,6 +41,8 @@ import com.google.inject.name.Names;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
+import eu.infomas.annotation.AnnotationDetector;
+
 public class SpeedyConfig extends JerseyServletModule {
 
 	private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -51,7 +51,7 @@ public class SpeedyConfig extends JerseyServletModule {
 
 	String configFile;
 
-	final static Pattern CONFIGS = Pattern.compile("speedy-.*\\.properties");
+	// final static Pattern CONFIGS = Pattern.compile("speedy-.*\\.properties");
 
 	public SpeedyConfig(String basePackage, String configFile) {
 
@@ -70,18 +70,6 @@ public class SpeedyConfig extends JerseyServletModule {
 	@Override
 	protected void configureServlets() {
 
-		Reflections reflection = Reflections.collect();
-
-		/*
-		 * Bind configuration parameters from various config locations to @Named
-		 */
-		try {
-			Names.bindProperties(binder(), ConfigHelper.getProperties(
-					reflection.getResources(CONFIGS), configFile));
-		} catch (ConfigurationException e) {
-			logger.error("Configuration failed", e);
-			System.exit(5);
-		}
 		bind(String.class).annotatedWith(Names.named("basePackage"))
 				.toInstance(basePackage);
 
@@ -95,15 +83,19 @@ public class SpeedyConfig extends JerseyServletModule {
 
 		Set<Class<?>> components = new HashSet<Class<?>>();
 
-		Set<Class<?>> controllers = reflection
-				.getTypesAnnotatedWith(Path.class);
-		logger.info("Found {} controllers", controllers.size());
-		components.addAll(controllers);
+		ComponentReporter componentReporter = new ComponentReporter();
+		AnnotationDetector cf = new AnnotationDetector(componentReporter);
 
-		Set<Class<?>> services = reflection
-				.getTypesAnnotatedWith(Service.class);
-		logger.info("Found {} services", services.size());
-		components.addAll(services);
+		try {
+			cf.detect();
+		} catch (IOException e) {
+			logger.error("Could not process components!", e);
+			System.exit(5);
+		}
+
+		components.addAll(componentReporter.getComponents());
+
+		logger.info("Found {} components", components.size());
 
 		for (Class<?> component : components) {
 			bind(component);
@@ -112,11 +104,15 @@ public class SpeedyConfig extends JerseyServletModule {
 		bind(NotFoundExceptionHandler.class);
 		bind(DefaultWebApplicationExceptionHandler.class);
 		bind(ParamExceptionHandler.class);
-		
+
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
+
 		serve("/*").with(GuiceContainer.class, params);
 	}
 
+	public ServletContext getServContext() {
+		return getServContext();
+	}
 
 }
