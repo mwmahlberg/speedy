@@ -17,12 +17,13 @@
 
 package com.github.mwmahlberg.speedy.config;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 
+import org.apache.shiro.guice.aop.ShiroAopModule;
 import org.apache.shiro.guice.web.ShiroWebModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,53 +35,53 @@ import com.google.inject.servlet.GuiceServletContextListener;
 
 public class ApplicationConfig extends GuiceServletContextListener {
 
-	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	private ArrayList<Module> modules;
-	
+	private LinkedList<Module> modules;
+
 	ServletContext context;
+
+	Boolean secured = Boolean.TRUE;
 
 	public ApplicationConfig(String basePackage, String configFile, Boolean secured,
 			Module... modules) {
 
-		this.modules = new ArrayList<Module>();
+		this.modules = new LinkedList<Module>();
+		this.modules.add(new SpeedyConfig(basePackage, configFile));
+
 		if (modules.length > 0) {
 			this.modules.addAll(Arrays.asList(modules));
 		}
-		
-		this.modules.add(new SpeedyConfig(basePackage, configFile));
-		
-		if (secured) {
-			this.modules.add(new SpeedyShiroWebModule(this.context));
-			this.modules.add(ShiroWebModule.guiceFilterModule());
-		}
-		
+
+
+		this.secured = secured;
+
 	}
 
-	public ApplicationConfig(String basePackage, Boolean secured,Module... modules) {
-		this(basePackage, null,secured, modules);
-	}
-
-	@Override
-	public void contextInitialized(ServletContextEvent servletContextEvent) {
-		
-		/* We need the servlet context for correctly
-		 * initializing Shiro
-		 */
-		logger.info("Acquiring servlet context");
-		context = servletContextEvent.getServletContext();
-		super.contextInitialized(servletContextEvent);
+	public ApplicationConfig(String basePackage, Boolean secured,
+			 Module... modules) {
+		this(basePackage, null, secured, modules);
 	}
 	
 	@Override
+	public void contextInitialized(ServletContextEvent servletContextEvent) {
+		this.context = servletContextEvent.getServletContext();
+		super.contextInitialized(servletContextEvent);
+	}
+
+	@Override
 	protected Injector getInjector() {
+
+		Long start = System.currentTimeMillis();
+
+		logger.info("Bootstrapping Shiro Security Layer");
 		
-		if(context == null){
-			logger.error("ServletContext is null!!!");
-		}
-		
-		return Guice.createInjector(modules);
+		Injector injector = Guice.createInjector(this.modules);
+
+		logger.info("Bootstrapped Shiro Security Layer in {} ms",
+				System.currentTimeMillis() - start);
+
+		return injector;
 	}
 
 }

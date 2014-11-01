@@ -62,11 +62,6 @@
 			<artifactId>jul-to-slf4j</artifactId>
 			<version>1.7.7</version>
 		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-servlet</artifactId>
-			<version>9.3.0.M0</version>
-		</dependency>
 
 		<!-- necessary for reflections to use collect() to process compile time 
 			reflections -->
@@ -104,6 +99,11 @@
 			<groupId>eu.infomas</groupId>
 			<artifactId>annotation-detector</artifactId>
 			<version>3.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>9.2.3.v20140905</version>
 		</dependency>
 	</dependencies>
 	<name>Speedy Core</name>

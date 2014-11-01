@@ -17,31 +17,29 @@
 
 package com.github.mwmahlberg.speedy.config;
 
-import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.ServletContext;
-
+import org.apache.shiro.guice.aop.ShiroAopModule;
 import org.apache.shiro.guice.web.GuiceShiroFilter;
+import org.apache.shiro.realm.Realm;
+import org.apache.shiro.realm.text.IniRealm;
+import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.web.session.mgt.ServletContainerSessionManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
-import com.github.mwmahlberg.speedy.handler.DefaultWebApplicationExceptionHandler;
-import com.github.mwmahlberg.speedy.handler.NotFoundExceptionHandler;
-import com.github.mwmahlberg.speedy.handler.ParamExceptionHandler;
-import com.github.mwmahlberg.speedy.provider.JacksonJaxbJsonProviderProvider;
-import com.github.mwmahlberg.speedy.provider.ObjectMapperProvider;
-import com.google.inject.Scopes;
+import com.github.mwmahlberg.speedy.components.ComponentModule;
+import com.github.mwmahlberg.speedy.handler.HandlerModule;
+import com.github.mwmahlberg.speedy.provider.ProviderModule;
+import com.google.inject.Provides;
+import com.google.inject.Singleton;
 import com.google.inject.name.Names;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
-
-import eu.infomas.annotation.AnnotationDetector;
 
 public class SpeedyConfig extends JerseyServletModule {
 
@@ -50,8 +48,6 @@ public class SpeedyConfig extends JerseyServletModule {
 	String basePackage;
 
 	String configFile;
-
-	// final static Pattern CONFIGS = Pattern.compile("speedy-.*\\.properties");
 
 	public SpeedyConfig(String basePackage, String configFile) {
 
@@ -73,46 +69,39 @@ public class SpeedyConfig extends JerseyServletModule {
 		bind(String.class).annotatedWith(Names.named("basePackage"))
 				.toInstance(basePackage);
 
-		bind(ObjectMapper.class).toProvider(ObjectMapperProvider.class).in(
-				Scopes.SINGLETON);
-
-		bind(JacksonJaxbJsonProvider.class).toProvider(
-				JacksonJaxbJsonProviderProvider.class).in(Scopes.SINGLETON);
-
-		bind(GuiceContainer.class);
-
-		Set<Class<?>> components = new HashSet<Class<?>>();
-
-		ComponentReporter componentReporter = new ComponentReporter();
-		AnnotationDetector cf = new AnnotationDetector(componentReporter);
-
-		try {
-			cf.detect();
-		} catch (IOException e) {
-			logger.error("Could not process components!", e);
-			System.exit(5);
-		}
-
-		components.addAll(componentReporter.getComponents());
-
-		logger.info("Found {} components", components.size());
-
-		for (Class<?> component : components) {
-			bind(component);
-		}
-
-		bind(NotFoundExceptionHandler.class);
-		bind(DefaultWebApplicationExceptionHandler.class);
-		bind(ParamExceptionHandler.class);
 
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
+		
+
+
+		logger.info("Installing modules");
+		install(new ProviderModule());
+
+		install(new SpeedyShiroWebModule(getServletContext()));
+		install(SpeedyShiroWebModule.guiceFilterModule());
+		install(new ShiroAopModule());
+		install(new ShiroMethodInterceptorModule());
+		
+		install(new ComponentModule());
+		install(new HandlerModule());
+
+		logger.info("Finished installing modules");
+
+		filter("/*").through(GuiceShiroFilter.class);
 
 		serve("/*").with(GuiceContainer.class, params);
+
+
 	}
 
-	public ServletContext getServContext() {
-		return getServContext();
+	@Provides
+	@Singleton
+	public Set<Realm> realm() {
+
+		return new HashSet<Realm>(Arrays.asList(new IniRealm(
+				"classpath:shiro.ini")));
 	}
+	
 
 }

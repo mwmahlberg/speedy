@@ -22,6 +22,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
+import org.apache.shiro.authz.AuthorizationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,8 +36,11 @@ public class DefaultWebApplicationExceptionHandler implements
 	Logger logger = LoggerFactory.getLogger(getClass());
 
 	public Response toResponse(WebApplicationException exception) {
-		
+
+		logger.warn(exception.getMessage());
 		logger.warn("WebApplicationException cought!", exception);
+		
+		exception.printStackTrace();
 		
 		return Response.status(500)
 				.entity(new Viewable("_status/Default", exception)).build();

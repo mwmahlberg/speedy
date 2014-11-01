@@ -23,6 +23,9 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.sun.jersey.api.NotFoundException;
 import com.sun.jersey.api.view.Viewable;
 
@@ -31,6 +34,12 @@ import com.sun.jersey.api.view.Viewable;
 public class NotFoundExceptionHandler implements
 		ExceptionMapper<NotFoundException> {
 
+	Logger logger = LoggerFactory.getLogger(getClass());
+	
+	public NotFoundExceptionHandler() {
+		logger.info("Initializing {}",getClass().getName());
+	}
+	
 	public Response toResponse(NotFoundException exception) {		
 		return Response.status(Status.NOT_FOUND).entity(new Viewable("_status/NotFound", exception)).build();
 	}
