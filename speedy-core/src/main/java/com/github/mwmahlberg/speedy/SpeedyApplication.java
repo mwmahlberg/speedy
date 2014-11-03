@@ -20,15 +20,13 @@ package com.github.mwmahlberg.speedy;
 import java.util.EnumSet;
 import java.util.logging.LogManager;
 
-import javax.servlet.DispatcherType;
-
 import org.apache.commons.cli.BasicParser;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-import org.apache.shiro.guice.web.GuiceShiroFilter;
+import org.apache.shiro.guice.web.ShiroWebModule;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -41,18 +39,35 @@ import com.github.mwmahlberg.speedy.config.ApplicationConfig;
 import com.google.inject.Module;
 import com.google.inject.servlet.GuiceFilter;
 
+/**
+ * 
+ * @author markus
+ *
+ */
 public class SpeedyApplication {
+	
+	Logger logger = LoggerFactory.getLogger(getClass());
 
 	private Server jetty;
 
 	private final String basePackage;
+	
+	private final Class<? extends ShiroWebModule> clazz;
 
-	Logger logger = LoggerFactory.getLogger(getClass());
 
-	public SpeedyApplication(String basePackage) {
+	public SpeedyApplication(String basePackage,Class<? extends ShiroWebModule> clazz) {
 		this.basePackage = basePackage;
+		this.clazz = clazz;
 	}
 
+	/**
+	 * Configures the SpeedyApplication using
+	 * the command line arguments and an arbitrary number of
+	 * {@link Module}s, guaranteed to be installed in the order
+	 * they were passed
+	 * @param args the command line arguments as passed to the main method
+	 * @param modules {@link Module}s which shall be used additionally to the ones used by the framework
+	 */
 	public void configure(String[] args, Module... modules) {
 
 		Options options = new Options();
@@ -108,10 +123,10 @@ public class SpeedyApplication {
 			}
 			// context.addEventListener(new EnvironmentLoaderListener());
 			context.addEventListener(new ApplicationConfig(basePackage, line
-					.getOptionValue("f"), secured, modules));
+					.getOptionValue("f"), clazz, secured, modules));
 			
 			jetty.setHandler(context);
-
+			
 			/*
 			 * Filter everything through Guice, so that @Inject's can be done
 			 */
@@ -131,6 +146,11 @@ public class SpeedyApplication {
 
 	}
 
+	/**
+	 * Runs the SpeedyApplication
+	 * The embedded jetty {@link Server} instance is started
+	 * @throws Exception
+	 */
 	public void run() throws Exception {
 		jetty.start();
 		jetty.join();

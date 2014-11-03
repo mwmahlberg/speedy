@@ -27,11 +27,26 @@ import org.apache.commons.configuration.SystemConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.github.mwmahlberg.speedy.SpeedyApplication;
+
+/**
+ * Helper class for configuration file processing.
+ * @author markus
+ *
+ */
 public class ConfigHelper {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(ConfigHelper.class);
 
+	/**
+	 * Loads property files from various locations.
+	 * @param props property file locations
+	 * @param configFile as given by the user with the -f command line
+	 *        option of {@link SpeedyApplication}
+	 * @return Flattened properties representing the key/value pairs of <u>all</u> config files
+	 * @throws ConfigurationException
+	 */
 	public static Properties getProperties(Set<String> props, String configFile)
 			throws ConfigurationException {
 

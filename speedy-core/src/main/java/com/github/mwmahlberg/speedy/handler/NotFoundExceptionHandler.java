@@ -34,6 +34,8 @@ import com.sun.jersey.api.view.Viewable;
 public class NotFoundExceptionHandler implements
 		ExceptionMapper<NotFoundException> {
 
+	
+	
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	public NotFoundExceptionHandler() {

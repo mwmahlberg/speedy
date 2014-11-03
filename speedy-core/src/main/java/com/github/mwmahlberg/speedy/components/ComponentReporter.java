@@ -1,4 +1,4 @@
-package com.github.mwmahlberg.speedy.config;
+package com.github.mwmahlberg.speedy.components;
 
 import java.lang.annotation.Annotation;
 import java.util.HashSet;
@@ -6,10 +6,16 @@ import java.util.Set;
 
 import javax.ws.rs.Path;
 
-import com.github.mwmahlberg.speedy.Service;
+import com.github.mwmahlberg.speedy.annotations.Service;
 
 import eu.infomas.annotation.AnnotationDetector.TypeReporter;
 
+
+/**
+ * Scans the classpath for classes annotated with {@link Service} and {@link Path}
+ * @author markus
+ *
+ */
 public class ComponentReporter implements TypeReporter {
 
 	Set<Class<?>> components = new HashSet<Class<?>>();

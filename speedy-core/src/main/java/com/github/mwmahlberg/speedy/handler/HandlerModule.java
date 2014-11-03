@@ -6,6 +6,7 @@ public class HandlerModule extends AbstractModule{
 
 	@Override
 	protected void configure() {
+		bind(AuthorizationExceptionMapper.class);
 		bind(NotFoundExceptionHandler.class);
 		bind(ParamExceptionHandler.class);
 		bind(UnauthorizedExceptionHandler.class);

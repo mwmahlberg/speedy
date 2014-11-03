@@ -1,4 +1,4 @@
-package com.github.mwmahlberg.speedy.config;
+package com.github.mwmahlberg.speedy.security;
 
 import java.lang.reflect.Method;
 

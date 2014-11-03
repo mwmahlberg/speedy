@@ -1,7 +1,5 @@
 package com.github.mwmahlberg.speedy.provider;
 
-import org.apache.shiro.session.mgt.SessionManager;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.google.inject.AbstractModule;

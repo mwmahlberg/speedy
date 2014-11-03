@@ -15,13 +15,23 @@
  * 
  */
 
-package com.github.mwmahlberg.speedy;
+package com.github.mwmahlberg.speedy.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+
+/**
+ * 
+ * Annotation which marks Services which should be automatically bound into the
+ * Guice dependency framework by Speedy.
+ * 
+ * @author Markus Mahlberg
+ * @since 0.1.0
+ *
+ */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Service {

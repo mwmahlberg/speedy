@@ -7,11 +7,17 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.mwmahlberg.speedy.config.ComponentReporter;
 import com.google.inject.AbstractModule;
+import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
 import eu.infomas.annotation.AnnotationDetector;
 
+/**
+ * Binds classes discovered by {@link ComponentReporter} into the {@link GuiceContainer}.
+ * 
+ * @author markus
+ *
+ */
 public class ComponentModule extends AbstractModule {
 	
 	Logger logger = LoggerFactory.getLogger(getClass());
