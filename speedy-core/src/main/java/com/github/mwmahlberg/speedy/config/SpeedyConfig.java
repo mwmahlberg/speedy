@@ -99,7 +99,6 @@ public class SpeedyConfig extends JerseyServletModule {
 		ServletModule filterModule = getFilterModule(clazz);
 
 		if (secured && shiroModule != null && filterModule != null) {
-			// install(new ShiroMethodInterceptorModule());
 			install(shiroModule);
 			install(filterModule);
 			install(new ShiroAopModule());
